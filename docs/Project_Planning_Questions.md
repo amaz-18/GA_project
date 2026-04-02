@@ -147,4 +147,11 @@ Compare your results with the paper’s findings:
 | **Differential Expression** | RNA‑seq analysis |
 | **Tn‑Seq** | Tn‑seq fitness analysis |
 
+---
+
+<details>
+  <summary><h1>Paper1 Specific Questions</h1></summary>
+
+---
+
 
