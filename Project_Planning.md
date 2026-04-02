@@ -143,4 +143,3 @@ GA_project/
 │   └── tnseq/
 │
 └── README.md
-
