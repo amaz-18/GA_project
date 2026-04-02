@@ -1,5 +1,5 @@
 # Project Plan  
-_Reanalysis of RNA‑seq and Tn‑seq Data from Zhang et al. (2017)_
+_Reproduce analysis and visualisations from Zhang et al. (2017)_
 
 Good project planning and data organisation are essential for efficient and reproducible bioinformatics research.  
 This project plan outlines the aim, analyses, timeline, data requirements, and organisational strategy for re‑analysing the RNA‑seq and Tn‑seq datasets from the study:
