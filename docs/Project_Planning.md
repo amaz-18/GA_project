@@ -1,8 +1,6 @@
 <details>
   <summary><h1>Project Planning (Based on Manual Questions)</h1></summary>
 
-# Project Planning (Based on Manual Questions)
-
 This document answers the project‑planning questions from the course manual and links them directly to the analyses performed in the study **“RNA‑seq and Tn‑seq reveal fitness determinants of vancomycin‑resistant Enterococcus faecium during growth in human serum”** by Zhang et al. (2017).
 
 ---
@@ -149,7 +147,4 @@ Compare your results with the paper’s findings:
 | **Differential Expression** | RNA‑seq analysis |
 | **Tn‑Seq** | Tn‑seq fitness analysis |
 
----
-
-This document forms the core of your project planning and can be referenced throughout your workflow.
 
