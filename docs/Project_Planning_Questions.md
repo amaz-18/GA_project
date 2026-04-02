@@ -147,6 +147,8 @@ Compare your results with the paper’s findings:
 | **Differential Expression** | RNA‑seq analysis |
 | **Tn‑Seq** | Tn‑seq fitness analysis |
 
+</details>
+
 ---
 
 <details>
