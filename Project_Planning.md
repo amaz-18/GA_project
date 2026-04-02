@@ -35,23 +35,21 @@ It does **not** include genome assembly or RNA assembly, because the reference g
 
 ## **A. RNA‑seq Differential Expression Workflow**
 
-| Step | Software |
-|------|----------|
-| Download FASTQ files | — |
-| Quality control | FastQC, MultiQC |
-| Trimming | Trimmomatic |
-| Alignment to reference genome | HISAT2 or STAR |
-| BAM processing | samtools |
-| Read counting | HTSeq or featureCounts |
-| Differential expression | DESeq2 |
-| Visualisation | R, ggplot2 |
-| Interpretation and comparison with paper | — |
-| (Optional) GO enrichment | rrvgo |
- 
-
-### **Time Bottlenecks**
-- Alignment (HISAT2/STAR)  
-- Counting (HTSeq for paired‑end can be slow)  
+| Step No. | Step Description | Software | Notes |
+|---------|------------------|----------|--------|
+| 1 | Download FASTQ files | — | |
+| 2 | Quality control | FastQC | |
+| - | **Genome Assembly (Skipped)** | SPAdes, Canu, QUAST | *Not performed — the E. faecium E745 reference genome is already provided in the paper.* |
+| 3 | Reads preprocessing / trimming | Trimmomatic | |
+| 4 | Assembly evaluation | samtools/BCFtools | |
+| 5 | Annotation | Prokka | |
+| 6 | Alignment to reference genome | HISAT2 or STAR (Appendix says BWA?) | |
+| 7 | Read counting | HTSeq | |
+| 8 | Differential expression | DESeq2 (R) | |
+| - | Gene ontology enrichment analysis | rrvgo | optional/extra |
+| 9 | Visualisation | R, ggplot2 | |
+| 10 | Genome comparison | BLAST | |
+| 11 | Interpretation and comparison with paper | — | | 
 
 ---
 
