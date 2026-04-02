@@ -22,20 +22,17 @@ The aim of this project is to reproduce and evaluate the transcriptomic and fitn
 ---
 
 <details>
-  <summary><h2>2. Analyses to Perform (Order, Tools, Bottlenecks)</h2></summary>
+  <summary><h2>2. Analyses to Perform (Order, needed software, timeline)</h2></summary>
 
-## **Overview**
 This project includes:
 - **RNA‑seq differential expression analysis**
 - **Tn‑seq fitness analysis**
-
-It does **not** include genome assembly or RNA assembly, because the reference genome is already provided in the paper.
 
 ---
 
 ## **A. RNA‑seq Differential Expression Workflow**
 
-| Step No. | Step Description | Software | Notes |
+| Step | Description | Software | Notes |
 |---------|------------------|----------|--------|
 | 1 | Download FASTQ files | — | |
 | 2 | Quality control | FastQC | |
