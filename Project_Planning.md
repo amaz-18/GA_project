@@ -22,7 +22,7 @@ The aim of this project is to reproduce and evaluate the transcriptomic and fitn
 ---
 
 <details>
-  <summary><h2>2. Analyses to Perform (Order, needed software, timeline)</h2></summary>
+  <summary><h2>2. Analyses to Perform (Order, software, timeline)</h2></summary>
 
 This project includes:
 - **RNA‑seq differential expression analysis**
@@ -80,40 +80,6 @@ This project includes:
 ---
 
 <details>
-  <summary><h2>3. Software Summary (Appendix‑Aligned)</h2></summary>
-
-### **Genome Assembly (Not Performed in This Project)**  
-_These tools are listed in the Appendix but not used here. The E745 genome is already assembled._  
-- FastQC  
-- Trimmomatic  
-- SPAdes  
-- Canu  
-- QUAST  
-- Prokka  
-
-### **RNA‑seq Tools (Used in This Project)**  
-- FastQC  
-- Trimmomatic  
-- HISAT2 / STAR  
-- samtools  
-- HTSeq / featureCounts  
-- DESeq2  
-- R + ggplot2  
-- rrvgo (optional)
-
-### **Tn‑seq Tools (Used in This Project)**  
-- FastQC  
-- Trimmomatic  
-- Bowtie2 or BWA  
-- samtools  
-- Python/R scripts  
-- TRANSIT / edgeR / DESeq2  
-
-</details>
-
----
-
-<details>
   <summary><h2>4. Data Types and Storage Requirements</h2></summary>
 
 ### **Data Types**
@@ -162,8 +128,7 @@ Directory layout:
 GA_project/
 │
 ├── Project_Planning.md
-│── Question & Answers.md
-│   
+├── Questions_And_Answers.md
 │
 ├── data/
 │   ├── raw/
@@ -178,3 +143,4 @@ GA_project/
 │   └── tnseq/
 │
 └── README.md
+
