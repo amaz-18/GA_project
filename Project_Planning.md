@@ -1,10 +1,8 @@
 # Project Plan  
-_Reproduce analysis and visualisations from Zhang et al. (2017)_
-
-Good project planning and data organisation are essential for efficient and reproducible bioinformatics research.  
-This project plan outlines the aim, analyses, timeline, data requirements, and organisational strategy for re‑analysing the RNA‑seq and Tn‑seq datasets from the study:
-
+_Reproduce analysis and visualisations from:_
 **“RNA‑seq and Tn‑seq reveal fitness determinants of vancomycin‑resistant Enterococcus faecium during growth in human serum” — Zhang et al., 2017**
+
+The project plan outlines the aim, analyses, timeline, data requirements, and some strategies for re‑analysing the RNA‑seq and Tn‑seq datasets.
 
 ---
 
@@ -37,26 +35,19 @@ It does **not** include genome assembly or RNA assembly, because the reference g
 
 ## **A. RNA‑seq Differential Expression Workflow**
 
-### **Steps**
-1. Download FASTQ files  
-2. Quality control (FastQC, MultiQC)  
-3. Trimming (Trimmomatic)  
-4. Alignment to reference genome (HISAT2 or STAR)  
-5. BAM processing (samtools)  
-6. Read counting (HTSeq or featureCounts)  
-7. Differential expression (DESeq2)  
-8. Visualisation (R, ggplot2)  
-9. Interpretation and comparison with paper  
-
-### **Software**
-- FastQC  
-- Trimmomatic  
-- HISAT2 / STAR  
-- samtools  
-- HTSeq / featureCounts  
-- DESeq2  
-- R + ggplot2  
-- (Optional) rrvgo for GO enrichment  
+| Step | Software |
+|------|----------|
+| Download FASTQ files | — |
+| Quality control | FastQC, MultiQC |
+| Trimming | Trimmomatic |
+| Alignment to reference genome | HISAT2 or STAR |
+| BAM processing | samtools |
+| Read counting | HTSeq or featureCounts |
+| Differential expression | DESeq2 |
+| Visualisation | R, ggplot2 |
+| Interpretation and comparison with paper | — |
+| (Optional) GO enrichment | rrvgo |
+ 
 
 ### **Time Bottlenecks**
 - Alignment (HISAT2/STAR)  
