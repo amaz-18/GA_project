@@ -1,5 +1,5 @@
 <details>
-  <summary><h1>Project Planning (Questions from INtro Seminar)</h1></summary>
+  <summary><h1>Project Planning (Questions from Intro Seminar)</h1></summary>
 
 This document answers the project‑planning questions from the course manual and links them directly to the analyses performed in the study **“RNA‑seq and Tn‑seq reveal fitness determinants of vancomycin‑resistant Enterococcus faecium during growth in human serum”** by Zhang et al. (2017).
 
