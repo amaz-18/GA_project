@@ -7,7 +7,7 @@ The project plan outlines the aim, analyses, timeline, data requirements, and so
 ---
 
 <details>
-  <summary><h2>1. Project Aim</h2></summary>
+  <summary><h2>1. Aim</h2></summary>
 
 The aim of this project is to reproduce and evaluate the transcriptomic and fitness analyses performed in Zhang et al. (2017) to identify genes that enable *Enterococcus faecium* E745 to grow and survive in human serum.
 
