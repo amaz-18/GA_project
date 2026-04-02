@@ -154,7 +154,10 @@ Compare your results with the paper’s findings:
 <details>
   <summary><h1>Paper1 Specific Questions</h1></summary>
 
+**“RNA‑seq and Tn‑seq reveal fitness determinants of vancomycin‑resistant Enterococcus faecium during growth in human serum”** by Zhang et al. (2017)
+
 ---
+
 ### **Why was *E. faecium* selected?**
 It is a major multidrug‑resistant hospital pathogen causing bloodstream infections. The study focuses on how it survives in human serum.
 
