@@ -1,4 +1,4 @@
-## 3. Paper‑Specific Questions (Zhang et al., 2017)
+## Paper 1 Specific Questions (Zhang et al., 2017)
 
 ### **Why was *E. faecium* selected?**
 It is a major multidrug‑resistant hospital pathogen causing bloodstream infections. The study focuses on how it survives in human serum.
