@@ -8,23 +8,25 @@ This document answers the project‑planning questions from the course manual an
 ## 1. What software would you use?
 
 ### **Genome Assembly**
-- FastQC / MultiQC — quality control  
-- fastp / Trimmomatic — trimming  
-- SPAdes / Canu / Flye — assembly  
-- QUAST — assembly quality assessment  
-- Prokka — genome annotation  
+- FastQC — Reads quality control  
+- Trimmomatic — Reads preprocessing/Trimming  
+- SPAdes — Short-read Assembly
+- Canu — Long-read Assembly  
+- QUAST — Assembly quality assessment/evaluation  
+- Prokka — Genome annotation  
 
 ### **RNA‑seq Differential Expression**
-- FastQC / MultiQC — QC  
-- fastp / Trimmomatic — trimming  
-- HISAT2 / STAR — alignment  
+- FastQC — Reads Quality Control  
+- Trimmomatic — Reads preprocessing/Trimming  
+- HISAT2 / STAR — Mapping/Alignment  
 - samtools — BAM processing  
-- featureCounts / HTSeq — quantification  
-- DESeq2 — differential expression  
+- Htseq/featureCounts / HTSeq — Quantification(Differencial Expression)  
+- DESeq2 (R) — Differential expression
+- rrvgo — Gene Ontology(GO) Enrichment  
 - R / ggplot2 — visualisation  
 
 ### **Tn‑seq Fitness Analysis**
-- FastQC / MultiQC — QC  
+- FastQC — Reads Quality Control  
 - Cutadapt / fastp — trimming transposon sequences  
 - Bowtie2 — mapping insertion sites  
 - Custom Python/R scripts — insertion counting  
@@ -100,10 +102,10 @@ This document answers the project‑planning questions from the course manual an
 
 ## 4. What happens in each step?
 
-### **QC (FastQC/MultiQC)**
+### **Reads Quality Control (FastQC)**
 Assess read quality, GC content, adapter contamination.
 
-### **Trimming (fastp/Trimmomatic)**
+### **Reads Preprocessing/Trimming (Trimmomatic)**
 Remove adapters, low‑quality bases, and transposon sequences (Tn‑seq).
 
 ### **Alignment (HISAT2/STAR/Bowtie2)**
