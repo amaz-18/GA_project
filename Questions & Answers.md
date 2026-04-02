@@ -8,9 +8,11 @@ This document answers the project‑planning questions from the course manual an
 ## 1. What software would you use?
 
 ### **Genome Assembly**
+*(Not performed in my project — the Appendix lists these tools but the E. faecium E745 genome is already assembled in the paper)*
+
 - FastQC — Reads quality control  
 - Trimmomatic — Reads preprocessing/Trimming  
-- SPAdes — Short-read Assembly
+- SPAdes — Combines Short and Long-read Assembly
 - Canu — Long-read Assembly  
 - QUAST — Assembly quality assessment/evaluation  
 - Prokka — Genome annotation  
@@ -27,10 +29,10 @@ This document answers the project‑planning questions from the course manual an
 
 ### **Tn‑seq Fitness Analysis**
 - FastQC — Reads Quality Control  
-- Cutadapt / fastp — trimming transposon sequences  
-- Bowtie2 — mapping insertion sites  
-- Custom Python/R scripts — insertion counting  
-- edgeR / DESeq2 / TRANSIT — fitness scoring  
+- Trimmomatic — trimming transposon sequences  
+- BWA — mapping insertion sites  
+- Custom R scripts — insertion counting  
+- DESeq2 (R) — Differential Expression/Compare insertion abundance between conditions  
 - R / Python — plotting  
 
 ---
