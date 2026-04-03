@@ -7,9 +7,9 @@ The project plan summarises the outlines of the project (aim, data and sample ty
 ---
 
 <details>
-  <summary><h2>1. Aim</h2></summary>
+  <summary><h2>Outline</h2></summary>
 
-The aims of this project are to:
+# The aims of this project are to:
 - gain experience using common bioinformatics tools and methods for sequence analysis
 - develop own workflow and learn to build and manage a clear and updated Github repository
 - learn to answer important biological question through the interpretation of our analyses
@@ -26,7 +26,7 @@ The aims of this project are to:
 ---
 
 <details>
-  <summary><h2>2. Analyses to Perform (order, software, timeline)</h2></summary>
+  <summary><h2>Analyses to Perform (order, software etc.)</h2></summary>
 
 This project includes (mandatory):
 - **Genome assembly with PacBio reads**  
@@ -99,7 +99,7 @@ This project includes (mandatory):
 
 
 <details>
-  <summary><h2>4. Data Types and Storage Requirements</h2></summary>
+  <summary><h2>Timeline and Checkpoints</h2></summary>
 
 ### **Data Types**
 - RNA‑seq paired‑end FASTQ files  
@@ -120,7 +120,7 @@ This project includes (mandatory):
 ---
 
 <details>
-  <summary><h2>6. Data Organisation Strategy</h2></summary>
+  <summary><h2>Data Management Plan</h2></summary>
 
 Directory layout:
 GA_project/
