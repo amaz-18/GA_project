@@ -22,62 +22,77 @@ The aim of this project is to reproduce and evaluate the transcriptomic and fitn
 ---
 
 <details>
-  <summary><h2>2. Analyses to Perform (Order, software, timeline)</h2></summary>
+  <summary><h2>2. Analyses to Perform (order, software, timeline)</h2></summary>
 
-This project includes:
-- **RNA‑seq differential expression analysis**
-- **Tn‑seq fitness analysis**
+This project includes (mandatory):
+- **A. Genome assembly with PacBio reads**  
+- **B. Assembly evaluation**  
+- **C. Structural and functional annotation**  
+- **D. Synteny comparison with a closely related genome**  
+- **E. Reads preprocessing (QC + trimming)**  
+- **F. RNA‑seq alignment against the assembled genome**  
+- **G. Differential expression analysis (serum vs rich medium)**
 
 ---
 
-## **A. RNA‑seq Differential Expression Workflow**
+## **A. Genome Assembly Workflow**
 
 | Step | Description | Software | Notes |
-|---------|------------------|----------|--------|
-| 1 | Download FASTQ files | — | |
-| 2 | Quality control | FastQC | |
-| - | **Genome Assembly (Skipped)** | SPAdes, Canu, QUAST | *Not performed — the E. faecium E745 reference genome is already provided in the paper.* |
-| 3 | Reads preprocessing / trimming | Trimmomatic | |
-| 4 | Assembly evaluation | samtools/BCFtools | |
-| 5 | Annotation | Prokka | |
-| 6 | Alignment to reference genome | HISAT2 or STAR (Appendix says BWA?) | |
-| 7 | Read counting | HTSeq | |
-| 8 | Differential expression | DESeq2 (R) | |
-| - | Gene ontology enrichment analysis | rrvgo | optional/extra |
-| 9 | Visualisation | R, ggplot2 | |
-| 10 | Genome comparison | BLAST | |
-| 11 | Interpretation and comparison with paper | — | | 
+|------|-------------|----------|-------|
+| 1 | Download PacBio reads (ENA PRJEB19025) | `prefetch`, `fasterq-dump` | Required for assembly |
+| 2 | Long‑read assembly | Canu | Paper used Celera |
+| 3 | Hybrid gap closing | SPAdes | Paper used SPAdes |
+| 4 | Assembly polishing | BWA, samtools, bcftools | Align Illumina reads to correct errors |
+| 5 | Generate final assembly | — | Produces chromosome + plasmids |
 
 ---
 
-## **B. Tn‑seq Fitness Analysis Workflow**
+## **B. Assembly Evaluation**
 
-### **Steps**
-1. Download Tn‑seq FASTQ files  
-2. Quality control (FastQC)  
-3. Trim transposon sequences (Trimmomatic or Cutadapt)  
-4. Map insertion sites (Bowtie2 or BWA)  
-5. Count insertions per gene (custom scripts)  
-6. Compute fitness scores (TRANSIT / edgeR / DESeq2)  
-7. Identify essential genes  
-8. Visualisation (R/Python)  
-9. Compare with paper findings  
+| Step | Description | Software |
+|------|-------------|----------|
+| 1 | Assembly quality metrics | QUAST |
+| 2 | Coverage estimation | samtools |
+| 3 | Error inspection | samtools, bcftools |
 
-### **Software**
-- FastQC  
-- Trimmomatic  
-- Bowtie2 or BWA  
-- samtools  
-- Python/R scripts  
-- TRANSIT / edgeR / DESeq2  
+---
 
-### **Time Bottlenecks**
-- Mapping insertion sites  
-- Fitness scoring on large datasets  
+## **C. Structural & Functional Annotation**
+
+| Step | Description | Software |
+|------|-------------|----------|
+| 1 | Predict genes, CDS, RNAs | Prokka |
+| 2 | Generate GFF + GBK files | Prokka | Used for RNA‑seq alignment and synteny |
+
+---
+
+## **D. Synteny Comparison**
+
+| Step | Description | Software |
+|------|-------------|----------|
+| 1 | Identify closely related genome | NCBI GenBank |
+| 2 | Core genome alignment | **ParSNP** |
+| 3 | Synteny visualization | **Mauve** or ParSNP output |
+
+---
+
+## **E. RNA‑seq Differential Expression Workflow**
+
+| Step | Description | Software |
+|------|-------------|----------|
+| 1 | Download RNA‑seq FASTQ files | — |
+| 2 | Quality control | FastQC |
+| 3 | Reads preprocessing/Trimming | Trimmomatic |
+| 4 | Alignment to *my assembled genome* | HISAT2 or BWA |
+| 5 | Read counting | HTSeq |
+| 6 | Differential expression | DESeq2 (R) |
+| 7 | Visualisation | R, ggplot2 etc. |
+| 8 | Interpretation and comparison with paper | — |
 
 </details>
 
 ---
+
 
 <details>
   <summary><h2>4. Data Types and Storage Requirements</h2></summary>
