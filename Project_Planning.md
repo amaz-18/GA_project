@@ -25,13 +25,13 @@ The aim of this project is to reproduce and evaluate the transcriptomic and fitn
   <summary><h2>2. Analyses to Perform (order, software, timeline)</h2></summary>
 
 This project includes (mandatory):
-- **A. Genome assembly with PacBio reads**  
-- **B. Assembly evaluation**  
-- **C. Structural and functional annotation**  
-- **D. Synteny comparison with a closely related genome**  
-- **E. Reads preprocessing (QC + trimming)**  
-- **F. RNA‑seq alignment against the assembled genome**  
-- **G. Differential expression analysis (serum vs rich medium)**
+- **Genome assembly with PacBio reads**  
+- **Assembly evaluation**  
+- **Structural and functional annotation**  
+- **Synteny comparison with a closely related genome**  
+- **Reads preprocessing (QC + trimming)**  
+- **RNA‑seq alignment against the assembled genome**  
+- **Differential expression analysis (serum vs rich medium)**
 
 ---
 
@@ -110,27 +110,6 @@ This project includes (mandatory):
 - BAM files: 2–5× FASTQ size  
 - Keep track of UPPMAX quota  
 - Delete intermediate files when no longer needed  
-
-</details>
-
----
-
-<details>
-  <summary><h2>5. Timeline and Checkpoints</h2></summary>
-
-| Week | Task |
-|------|------|
-| **Week 1** | Read paper, define aims, set up repo, plan analyses |
-| **Week 2** | Download data, run QC + trimming |
-| **Week 3** | RNA‑seq alignment + counting |
-| **Week 4** | DESeq2 analysis + visualisation |
-| **Week 5** | Tn‑seq mapping + insertion counting |
-| **Week 6** | Fitness scoring + essential gene identification |
-| **Week 7** | Interpretation, comparison with paper |
-| **Week 8** | Final documentation and cleanup |
-
-### **Critical Checkpoint**
-All heavy computations (alignment, mapping) must be completed by **Week 4–5**.
 
 </details>
 
