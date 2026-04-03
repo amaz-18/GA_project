@@ -9,17 +9,16 @@ The project plan summarises the outlines of the project (aim, data and sample ty
 <details>
   <summary><h2>Outline</h2></summary>
 
-# The aims of this project are to:
+### Overall aims of this project are to:
 - gain experience using common bioinformatics tools and methods for sequence analysis
 - develop own workflow and learn to build and manage a clear and updated Github repository
 - learn to answer important biological question through the interpretation of our analyses
 - learn to troubleshoot errors and 
 
-### **Research Questions**
-- Which genes are differentially expressed in serum vs BHI (rich medium)?
-- Which genes are essential for growth in human serum?
-- Do the re‑analysed results support the conclusions of the original study?
-- Are purine biosynthesis, carbohydrate uptake, and stress‑response pathways enriched among essential genes?
+### My specific research Questions**
+- Which genes are differentially expressed when *E.faecium E745* is grown in human serum vs BHI (rich medium)?
+- Does serum exposure induce genes associated with host adaptation or immune evasion?
+- Which annotated pathways are activated in serum, and how do they relate to known virulence or stress‑response mechanisms?
 
 </details>
 
