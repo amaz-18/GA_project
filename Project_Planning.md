@@ -15,7 +15,7 @@ The project plan summarises the outlines of the project (aim, data and sample ty
 - learn to answer important biological question through the interpretation of our analyses
 - learn to troubleshoot errors and 
 
-### My specific research Questions**
+### My specific research Questions
 - Which genes are differentially expressed when *E.faecium E745* is grown in human serum vs BHI (rich medium)?
 - Does serum exposure induce genes associated with host adaptation or immune evasion?
 - Which annotated pathways are activated in serum, and how do they relate to known virulence or stress‑response mechanisms?
