@@ -1,15 +1,19 @@
 # Project Plan  
-_Reproduce analysis and visualisations from:_
+_Re-analyse real sequencing data from:_
 **“RNA‑seq and Tn‑seq reveal fitness determinants of vancomycin‑resistant Enterococcus faecium during growth in human serum” — Zhang et al., 2017**
 
-The project plan outlines the aim, analyses, timeline, data requirements, and some strategies for re‑analysing the RNA‑seq and Tn‑seq datasets.
+The project plan summarises the outlines of the project (aim, data and sample type(s), analyses and softwares, timeline, and data management plan.
 
 ---
 
 <details>
   <summary><h2>1. Aim</h2></summary>
 
-The aim of this project is to reproduce and evaluate the transcriptomic and fitness analyses performed in Zhang et al. (2017) to identify genes that enable *Enterococcus faecium* E745 to grow and survive in human serum.
+The aims of this project are to:
+- gain experience using common bioinformatics tools and methods for sequence analysis
+- develop own workflow and learn to build and manage a clear and updated Github repository
+- learn to answer important biological question through the interpretation of our analyses
+- learn to troubleshoot errors and 
 
 ### **Research Questions**
 - Which genes are differentially expressed in serum vs BHI (rich medium)?
