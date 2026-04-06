@@ -42,7 +42,7 @@ This project includes (mandatory):
 
 | Step | Description | Software | Notes |
 |------|-------------|----------|-------|
-| 1 | Download PacBio reads (ENA PRJEB19025) | `prefetch`, `fasterq-dump` | Required for assembly |
+| 1 | Download PacBio reads (ENA PRJEB19025) | — | Required for assembly |
 | 2 | Long‑read assembly | Canu | Paper used Celera |
 | 3 | Hybrid gap closing | SPAdes | Paper used SPAdes |
 | 4 | Assembly polishing | BWA, samtools, bcftools | Align Illumina reads to correct errors |
