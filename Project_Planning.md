@@ -99,7 +99,7 @@ This project includes (mandatory):
 
 **Output**
 - Annotated genome files (*gff*)
-- Functional gene lists and summary tables (*txt*, *tsv*)
+- Functional gene lists and summary tables (*txt*, *tsv/csv*)
 ---
 
 ## **D. Synteny Comparison**
@@ -107,7 +107,7 @@ This project includes (mandatory):
 | Step | Description | Software |
 |------|-------------|----------|
 | 1 | Identify a closely related *E. faecium* genome | NCBI GenBank |
-| 2 | Generate whole‑genome alignment (pairwise) | **BLASTN** (and **MUMmer/nucmer** as extra) |
+| 2 | Generate whole‑genome alignment (pairwise) | **BLASTN** |
 | 3 | Synteny visualisation | **ACT (Artemis Comparison Tool)** |
 
 **Input**
@@ -115,7 +115,7 @@ This project includes (mandatory):
 - Reference genome(s) of related *E. faecium* strains (*fasta*, *gff*)
 
 **Process**
-- Whole‑genome alignment using **BLASTN** (and **MUMmer/nucmer** as extra)
+- Whole‑genome alignment using **BLASTN**
 - Synteny visualisation using **ACT**
 
 **Output**
@@ -162,17 +162,17 @@ This project includes (mandatory):
 
 ###Differential expression
 **Input**
-- Gene‑level count matrix (*csv*, *tsv*)
+- Gene‑level count matrix (*tsv/csv*)
 - Sample metadata (*csv*)
 
 **Process**
 - Normalisation and statistical testing using **DESeq2**
-- Visualisation using **R** and **ggplot2**
+- Visualisation using **R**(*ggplot2*)
 
 **Output**
 - Differential expression tables (*csv*)
 - Volcano plots and heatmaps (*png*)
-- Pathway enrichment results (*csv*, *png*)
+- Pathway enrichment results (*tsv/csv*, *png*)
 
 </details>
 
