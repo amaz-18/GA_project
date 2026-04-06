@@ -136,7 +136,7 @@ This project includes (mandatory):
 | 7 | Visualisation | R, ggplot2 etc. |
 | 8 | Interpretation and comparison with paper | — |
 
-# Reads Preprocessing
+### Reads Preprocessing
 **Input**
 - Raw RNA‑seq reads (*fastq*) from BHI and serum conditions
 
@@ -147,7 +147,7 @@ This project includes (mandatory):
 **Output**
 - Cleaned RNA‑seq reads (*fastq*)
 
-# RNA-seq alignment against assembled genome
+### RNA-seq alignment against assembled genome
 **Input**
 - Cleaned RNA‑seq reads (*fastq*)
 - Annotated genome (*fasta*, *gff*)
@@ -160,7 +160,7 @@ This project includes (mandatory):
 - Aligned reads (*bam*)
 - Alignment statistics (*txt*)
 
-# Differential expression
+### Differential expression
 **Input**
 - Gene‑level count matrix (*tsv/csv*)
 - Sample metadata (*csv*)
