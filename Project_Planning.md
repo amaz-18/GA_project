@@ -89,8 +89,17 @@ This project includes (mandatory):
 | Step | Description | Software |
 |------|-------------|----------|
 | 1 | Predict genes, CDS, RNAs | Prokka |
-| 2 | Generate GFF + GBK files | Prokka | Used for RNA‑seq alignment and synteny |
+| 2 | Generate GFF files | Prokka | Used for RNA‑seq alignment and synteny |
 
+**Input**
+- Polished genome assembly (*fasta*)
+
+**Process**
+- Gene prediction and functional annotation using **Prokka**
+
+**Output**
+- Annotated genome files (*gff*)
+- Functional gene lists and summary tables (*txt*, *tsv*)
 ---
 
 ## **D. Synteny Comparison**
@@ -98,9 +107,20 @@ This project includes (mandatory):
 | Step | Description | Software |
 |------|-------------|----------|
 | 1 | Identify a closely related *E. faecium* genome | NCBI GenBank |
-| 2 | Generate whole‑genome alignment (pairwise) | **BLASTN** or **MUMmer/nucmer** |
+| 2 | Generate whole‑genome alignment (pairwise) | **BLASTN** (and **MUMmer/nucmer** as extra) |
 | 3 | Synteny visualisation | **ACT (Artemis Comparison Tool)** |
 
+**Input**
+- Annotated genome (*fasta*, *gff*)
+- Reference genome(s) of related *E. faecium* strains (*fasta*, *gff*)
+
+**Process**
+- Whole‑genome alignment using **BLASTN** (and **MUMmer/nucmer** as extra)
+- Synteny visualisation using **ACT**
+
+**Output**
+- Synteny alignment files (*act project files*)
+- Synteny plots (*png*)
 ---
 
 ## **E. RNA‑seq Differential Expression Workflow**
@@ -115,6 +135,44 @@ This project includes (mandatory):
 | 6 | Differential expression | DESeq2 (R) |
 | 7 | Visualisation | R, ggplot2 etc. |
 | 8 | Interpretation and comparison with paper | — |
+
+###Reads Preprocessing
+**Input**
+- Raw RNA‑seq reads (*fastq*) from BHI and serum conditions
+
+**Process**
+- Quality control with **FastQC**
+- Adapter and quality trimming using **Trimmomatic**
+
+**Output**
+- Cleaned RNA‑seq reads (*fastq*)
+
+###RNA-seq alignment against assembled genome
+**Input**
+- Cleaned RNA‑seq reads (*fastq*)
+- Annotated genome (*fasta*, *gff*)
+
+**Process**
+- Alignment using **HISAT2** or **BWA**
+- Sorting and indexing with **samtools**
+
+**Output**
+- Aligned reads (*bam*)
+- Alignment statistics (*txt*)
+
+###Differential expression
+**Input**
+- Gene‑level count matrix (*csv*, *tsv*)
+- Sample metadata (*csv*)
+
+**Process**
+- Normalisation and statistical testing using **DESeq2**
+- Visualisation using **R** and **ggplot2**
+
+**Output**
+- Differential expression tables (*csv*)
+- Volcano plots and heatmaps (*png*)
+- Pathway enrichment results (*csv*, *png*)
 
 </details>
 
