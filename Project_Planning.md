@@ -160,6 +160,17 @@ This project includes (mandatory):
 - Aligned reads (*bam*)
 - Alignment statistics (*txt*)
 
+### RNA‑seq Read Counting (HTSeq, paired‑end)
+**Input**
+- Aligned RNA‑seq reads (*bam*)  
+- Genome annotation (*gff*)
+
+**Process**
+- Gene‑level read counting using **HTSeq‑count** in **paired‑end**
+
+**Output**
+- Gene‑level count matrix (*tsv*)
+
 ### Differential expression
 **Input**
 - Gene‑level count matrix (*tsv/csv*)
