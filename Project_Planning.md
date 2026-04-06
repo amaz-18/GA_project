@@ -25,7 +25,7 @@ The project plan summarises the outlines of the project (aim, data and sample ty
 ---
 
 <details>
-  <summary><h2>Analyses to Perform (order, software etc.)</h2></summary>
+  <summary><h2>Analyses to Perform (steps, software, input/output etc.)</h2></summary>
 
 This project includes (mandatory):
 - **Genome assembly with PacBio reads**  
@@ -49,8 +49,8 @@ This project includes (mandatory):
 | 5 | Generate final assembly | — | Produces chromosome + plasmids |
 
 **Input**
-- PacBio long‑read FASTQ files (*E. faecium* E745 genomic DNA)
-- Illumina short‑read FASTQ files (for polishing)
+- PacBio long‑read (*fastq* - *E. faecium* E745 genomic DNA)
+- Illumina short‑read (*fastq* - for polishing)
 
 **Process**
 - Long‑read assembly using **Canu**
@@ -58,7 +58,7 @@ This project includes (mandatory):
 - Polishing with **BWA**, **samtools**, **bcftools**
 
 **Output**
-- Final assembled genome (FASTA) containing chromosome and plasmids
+- Final assembled genome (*fasta*) containing chromosome and plasmids
 ---
 
 ## **B. Assembly Evaluation**
