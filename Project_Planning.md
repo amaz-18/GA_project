@@ -73,9 +73,9 @@ This project includes (mandatory):
 
 | Step | Description | Software |
 |------|-------------|----------|
-| 1 | Identify closely related genome | NCBI GenBank |
-| 2 | Core genome alignment | **ParSNP** |
-| 3 | Synteny visualization | **Mauve** or ParSNP output |
+| 1 | Identify a closely related *E. faecium* genome | NCBI GenBank |
+| 2 | Generate whole‑genome alignment (pairwise) | **BLASTN** or **MUMmer/nucmer** |
+| 3 | Synteny visualisation | **ACT (Artemis Comparison Tool)** |
 
 ---
 
