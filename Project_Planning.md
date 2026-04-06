@@ -127,10 +127,10 @@ This project includes (mandatory):
 
 | Step | Description | Software |
 |------|-------------|----------|
-| 1 | Download RNA‑seq FASTQ files | — |
+| 1 | Download Illumina RNA‑seq paired-end reads  | — |
 | 2 | Quality control | FastQC |
 | 3 | Reads preprocessing/Trimming | Trimmomatic |
-| 4 | Alignment to *my assembled genome* | HISAT2 or BWA |
+| 4 | Alignment to *my assembled genome* | BWA |
 | 5 | Read counting | HTSeq |
 | 6 | Differential expression | DESeq2 (R) |
 | 7 | Visualisation | R, ggplot2 etc. |
@@ -153,20 +153,20 @@ This project includes (mandatory):
 - Annotated genome (*fasta*, *gff*)
 
 **Process**
-- Alignment using **HISAT2** or **BWA**
+- Alignment using **BWA**
 - Sorting and indexing with **samtools**
 
 **Output**
 - Aligned reads (*bam*)
 - Alignment statistics (*txt*)
 
-### *RNA‑seq Read Counting (HTSeq, paired‑end):*
+### *RNA‑seq Read Counting (HTSeq, paired‑end reads):*
 **Input**
 - Aligned RNA‑seq reads (*bam*)  
 - Genome annotation (*gff*)
 
 **Process**
-- Gene‑level read counting using **HTSeq‑count** in **paired‑end**
+- Gene‑level read counting using **HTSeq‑count**
 
 **Output**
 - Gene‑level count matrix (*tsv*)
