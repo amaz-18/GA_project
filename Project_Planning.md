@@ -48,6 +48,17 @@ This project includes (mandatory):
 | 4 | Assembly polishing | BWA, samtools, bcftools | Align Illumina reads to correct errors |
 | 5 | Generate final assembly | — | Produces chromosome + plasmids |
 
+**Input**
+- PacBio long‑read FASTQ files (*E. faecium* E745 genomic DNA)
+- Illumina short‑read FASTQ files (for polishing)
+
+**Process**
+- Long‑read assembly using **Canu**
+- Hybrid gap closing with **SPAdes**
+- Polishing with **BWA**, **samtools**, **bcftools**
+
+**Output**
+- Final assembled genome (FASTA) containing chromosome and plasmids
 ---
 
 ## **B. Assembly Evaluation**
@@ -58,6 +69,19 @@ This project includes (mandatory):
 | 2 | Coverage estimation | samtools |
 | 3 | Error inspection | samtools, bcftools |
 
+**Input**
+- Assembled genome (*fasta*)
+- Illumina reads (*fastq*)
+
+**Process**
+- Quality assessment with **QUAST**
+- Coverage estimation using **samtools**
+- Error inspection using **bcftools**
+
+**Output**
+- Quality metrics report (*html*, *tsv*)
+- Coverage depth statistics (*txt*, *bam*)
+- Variant calls (*vcf*)
 ---
 
 ## **C. Structural & Functional Annotation**
