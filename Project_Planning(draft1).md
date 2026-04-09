@@ -193,19 +193,8 @@ This project includes (mandatory):
 <details>
   <summary><h2>Timeline and Checkpoints</h2></summary>
 
-### **Data Types**
-- RNA‑seq paired‑end FASTQ files  
-- Tn‑seq FASTQ files  
-- Reference genome (FASTA + GFF)  
-- BAM files  
-- Count matrices  
-- Fitness score tables  
-
-### **Storage Considerations**
-- Raw FASTQ files: several GB  
-- BAM files: 2–5× FASTQ size  
-- Keep track of UPPMAX quota  
-- Delete intermediate files when no longer needed  
+### **TBC**
+ 
 
 </details>
 
@@ -225,11 +214,13 @@ GA_project/
 │   └── processed/
 │
 ├── scripts/
-│   ├── rnaseq/
-│   └── tnseq/
+│   ├── genome_assembly/
+    ├── *add everything inbetween*
+│   └── differential_expression(R)/
 │
 ├── results/
-│   ├── rnaseq/
-│   └── tnseq/
+│   ├── genome_assembly/
+│   ├── *add everything inbetween*
+│   └── differential_expression(R)/
 │
 └── README.md
