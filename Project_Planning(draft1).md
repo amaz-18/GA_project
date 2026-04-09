@@ -203,7 +203,8 @@ This project includes (mandatory):
 <details>
   <summary><h2>Data Management Plan</h2></summary>
 
-Directory layout:
+*fix layout, paste the tree from word doc. Look at management plan in the manual*
+
 GA_project/
 │
 ├── Project_Planning.md
