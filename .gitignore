@@ -1,0 +1,11 @@
+# GA_project .gitignore — 
+# ------------------------------------------------------------
+
+# Raw sequencing data
+# -------------------------
+# symlinks or real files
+data/raw_dna/
+data/rna/
+
+
+
