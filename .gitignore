@@ -7,5 +7,6 @@
 data/raw_dna/
 data/rna/
 
-
+# Ignore large resources/databases
+resources/
 
