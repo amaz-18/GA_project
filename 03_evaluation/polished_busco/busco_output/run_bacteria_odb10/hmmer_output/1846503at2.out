@@ -1,0 +1,15 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+tig00000001:2538210-2538701|- -            164 1846503at2           -            110     5e-35  117.2   0.5   1   2   2.5e-18   7.7e-15   52.2   0.0     2    42     3    43     2    60 0.84 tig00000001_2439 # 2538210 # 2538701 # -1 # ID=1_2439;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.374
+tig00000001:2538210-2538701|- -            164 1846503at2           -            110     5e-35  117.2   0.5   2   2   7.8e-22   2.4e-18   63.5   0.2    39   107    63   136    49   138 0.89 tig00000001_2439 # 2538210 # 2538701 # -1 # ID=1_2439;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.374
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1846503at2.hmm
+# Target file:     /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /gorilla/home/asma7174/GA_project/code/busco_polished/run_bacteria_odb10/hmmer_output/1846503at2.out --cpu 1 /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1846503at2.hmm /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /gorilla/home/asma7174/GA_project/code
+# Date:            Mon Apr 20 22:42:00 2026
+# [ok]

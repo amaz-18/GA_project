@@ -1,0 +1,72 @@
+2026-04-20 22:41:51 INFO:	***** Start a BUSCO v5.8.2 analysis, current time: 04/20/2026 22:41:51 *****
+2026-04-20 22:41:51 INFO:	Configuring BUSCO with /sw/arch/eb/software/BUSCO/5.8.2-gfbf-2024a/config/config.ini
+2026-04-20 22:41:51 INFO:	Running genome mode
+2026-04-20 22:41:51 INFO:	Downloading information on latest versions of BUSCO data...
+2026-04-20 22:41:51 INFO:	Input file is /home/asma7174/GA_project/02_assembly/polishing/output/assembly.polished.fasta
+2026-04-20 22:41:53 INFO:	Running BUSCO using lineage dataset bacteria_odb10 (prokaryota, 2024-01-08)
+2026-04-20 22:41:53 INFO:	Running 1 job(s) on bbtools, starting at 04/20/2026 22:41:53
+2026-04-20 22:41:54 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:54 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:54 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:54 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:54 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:54 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:54 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:54 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:54 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:54 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:54 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:54 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:54 INFO:	[bbtools]	1 of 1 task(s) completed
+2026-04-20 22:41:54 INFO:	***** Run Prodigal on input to predict and extract genes *****
+2026-04-20 22:41:54 INFO:	Running Prodigal with genetic code 11 in single mode
+2026-04-20 22:41:54 INFO:	Running 1 job(s) on prodigal, starting at 04/20/2026 22:41:54
+2026-04-20 22:41:55 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:55 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:55 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:57 INFO:	[prodigal]	1 of 1 task(s) completed
+2026-04-20 22:41:57 INFO:	Genetic code 11 selected as optimal
+2026-04-20 22:41:57 INFO:	***** Run HMMER on gene sequences *****
+2026-04-20 22:41:57 INFO:	Running 124 job(s) on hmmsearch, starting at 04/20/2026 22:41:57
+2026-04-20 22:41:58 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:58 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:58 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:58 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:58 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:58 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:58 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:58 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:58 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:58 INFO:	Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2026-04-20 22:41:58 INFO:	Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-20 22:41:58 INFO:	NumExpr defaulting to 8 threads.
+2026-04-20 22:41:58 INFO:	[hmmsearch]	13 of 124 task(s) completed
+2026-04-20 22:41:59 INFO:	[hmmsearch]	25 of 124 task(s) completed
+2026-04-20 22:41:59 INFO:	[hmmsearch]	38 of 124 task(s) completed
+2026-04-20 22:41:59 INFO:	[hmmsearch]	50 of 124 task(s) completed
+2026-04-20 22:42:00 INFO:	[hmmsearch]	63 of 124 task(s) completed
+2026-04-20 22:42:00 INFO:	[hmmsearch]	75 of 124 task(s) completed
+2026-04-20 22:42:00 INFO:	[hmmsearch]	87 of 124 task(s) completed
+2026-04-20 22:42:00 INFO:	[hmmsearch]	100 of 124 task(s) completed
+2026-04-20 22:42:01 INFO:	[hmmsearch]	112 of 124 task(s) completed
+2026-04-20 22:42:01 INFO:	[hmmsearch]	124 of 124 task(s) completed
+2026-04-20 22:42:01 INFO:	Results:	C:98.4%[S:96.8%,D:1.6%],F:1.6%,M:0.0%,n:124	   
+
+2026-04-20 22:42:01 INFO:	
+
+    ---------------------------------------------------
+    |Results from dataset bacteria_odb10               |
+    ---------------------------------------------------
+    |C:98.4%[S:96.8%,D:1.6%],F:1.6%,M:0.0%,n:124       |
+    |122    Complete BUSCOs (C)                        |
+    |120    Complete and single-copy BUSCOs (S)        |
+    |2    Complete and duplicated BUSCOs (D)           |
+    |2    Fragmented BUSCOs (F)                        |
+    |0    Missing BUSCOs (M)                           |
+    |124    Total BUSCO groups searched                |
+    ---------------------------------------------------
+2026-04-20 22:42:01 INFO:	BUSCO analysis done. Total running time: 10 seconds
+2026-04-20 22:42:01 INFO:	Results written in /gorilla/home/asma7174/GA_project/code/busco_polished
+2026-04-20 22:42:01 INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
+2026-04-20 22:42:01 INFO:	Visit this page https://gitlab.com/ezlab/busco#how-to-cite-busco to see how to cite BUSCO

@@ -1,0 +1,5 @@
+Writing filtered delta file synteny.filter
+Reading delta file synteny.filter
+Writing plot files synteny.fplot, synteny.rplot
+Writing gnuplot script synteny.gp
+Rendering plot synteny.png

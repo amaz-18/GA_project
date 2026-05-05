@@ -1,0 +1,22 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+tig00000001:1369341-1370702|+ -            454 1093223at2           -            361     6e-95  316.1   0.1   1   1   8.8e-97   4.5e-94  313.2   0.1     2   358     9   452     8   453 0.83 tig00000001_1282 # 1369341 # 1370702 # 1 # ID=1_1282;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.380
+tig00000001:832584-833996|+   -            471 1093223at2           -            361   2.3e-14   51.0   0.1   1   1   1.1e-16   5.6e-14   49.7   0.1    72   264   119   353   104   436 0.80 tig00000001_773 # 832584 # 833996 # 1 # ID=1_773;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.418
+tig00000001:2226704-2228038|+ -            445 1093223at2           -            361     2e-11   41.4   0.1   1   1   2.3e-13   1.2e-10   38.8   0.1    49   255    78   316    67   318 0.75 tig00000001_2132 # 2226704 # 2228038 # 1 # ID=1_2132;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.383
+tig00000001:1488516-1489868|- -            451 1093223at2           -            361   8.8e-11   39.2   0.6   1   2   2.3e-11   1.2e-08   32.2   0.7    70   201    46   201    41   223 0.66 tig00000001_1417 # 1488516 # 1489868 # -1 # ID=1_1417;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.379
+tig00000001:1488516-1489868|- -            451 1093223at2           -            361   8.8e-11   39.2   0.6   2   2    0.0074       3.8    4.2   0.0   204   245   264   309   237   316 0.75 tig00000001_1417 # 1488516 # 1489868 # -1 # ID=1_1417;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.379
+tig00000001:353397-354902|+   -            502 1093223at2           -            361   1.5e-08   31.9   2.7   1   2   2.6e-05     0.014   12.3   0.4    72    98   112   138   101   148 0.88 tig00000001_345 # 353397 # 354902 # 1 # ID=1_345;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.386
+tig00000001:353397-354902|+   -            502 1093223at2           -            361   1.5e-08   31.9   2.7   2   2   3.7e-07   0.00019   18.4   0.1   111   255   177   362   173   392 0.72 tig00000001_345 # 353397 # 354902 # 1 # ID=1_345;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.386
+tig00000001:1611963-1613276|+ -            438 1093223at2           -            361   0.00061   16.7   0.0   1   2   5.3e-06    0.0027   14.6   0.0    67   113    36    79    17    85 0.78 tig00000001_1528 # 1611963 # 1613276 # 1 # ID=1_1528;partial=00;start_type=ATG;rbs_motif=GGxGG;rbs_spacer=5-10bp;gc_cont=0.381
+tig00000001:1611963-1613276|+ -            438 1093223at2           -            361   0.00061   16.7   0.0   2   2      0.26   1.3e+02   -0.8   0.0   203   222   254   273   186   304 0.77 tig00000001_1528 # 1611963 # 1613276 # 1 # ID=1_1528;partial=00;start_type=ATG;rbs_motif=GGxGG;rbs_spacer=5-10bp;gc_cont=0.381
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1093223at2.hmm
+# Target file:     /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /gorilla/home/asma7174/GA_project/code/busco_polished/run_bacteria_odb10/hmmer_output/1093223at2.out --cpu 1 /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1093223at2.hmm /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /gorilla/home/asma7174/GA_project/code
+# Date:            Mon Apr 20 22:41:58 2026
+# [ok]

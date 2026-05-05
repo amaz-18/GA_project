@@ -1,0 +1,18 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+tig00000001:782485-783096|-   -            204 1211060at2           -            164   4.7e-59  196.3   1.1   1   2   1.3e-57   9.8e-55  182.3   0.4     1   139     1   155     1   168 0.87 tig00000001_725 # 782485 # 783096 # -1 # ID=1_725;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.413
+tig00000001:782485-783096|-   -            204 1211060at2           -            164   4.7e-59  196.3   1.1   2   2   1.4e-05     0.011   13.0   0.0   137   163   171   200   162   201 0.90 tig00000001_725 # 782485 # 783096 # -1 # ID=1_725;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.413
+tig00000001:411060-411329|-   -             90 1211060at2           -            164   0.00013   19.3   0.2   1   1   1.8e-07   0.00014   19.1   0.2    79   134     2    57     1    85 0.79 tig00000001_381 # 411060 # 411329 # -1 # ID=1_381;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.330
+tig00000001:1020550-1021422|+ -            291 1211060at2           -            164    0.0046   14.2   0.2   1   1   9.1e-06     0.007   13.6   0.2    73   133   196   261   184   283 0.77 tig00000001_956 # 1020550 # 1021422 # 1 # ID=1_956;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.387
+tig00000001:2682887-2683603|- -            239 1211060at2           -            164     0.012   12.9   0.1   1   1   2.6e-05      0.02   12.1   0.1    78   128     2    52     1    65 0.88 tig00000001_2577 # 2682887 # 2683603 # -1 # ID=1_2577;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.404
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1211060at2.hmm
+# Target file:     /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /gorilla/home/asma7174/GA_project/code/busco_polished/run_bacteria_odb10/hmmer_output/1211060at2.out --cpu 1 /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/1211060at2.hmm /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /gorilla/home/asma7174/GA_project/code
+# Date:            Mon Apr 20 22:41:59 2026
+# [ok]

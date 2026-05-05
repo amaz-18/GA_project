@@ -1,0 +1,16 @@
+#                                                                                     --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                 accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#         ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+tig00000001:715853-716161|+   -            103 2040741at2           -             54     1e-17   61.3  13.2   1   2   9.7e-06     0.015   12.7   1.3     2    13     3    14     2    15 0.95 tig00000001_655 # 715853 # 716161 # 1 # ID=1_655;partial=00;start_type=ATG;rbs_motif=AGGAGG;rbs_spacer=11-12bp;gc_cont=0.385
+tig00000001:715853-716161|+   -            103 2040741at2           -             54     1e-17   61.3  13.2   2   2   5.8e-18   8.9e-15   51.8   4.8    14    53    33    82    32    83 0.81 tig00000001_655 # 715853 # 716161 # 1 # ID=1_655;partial=00;start_type=ATG;rbs_motif=AGGAGG;rbs_spacer=11-12bp;gc_cont=0.385
+tig00000001:1777038-1778063|+ -            342 2040741at2           -             54      0.02   12.3   0.0   1   1   3.9e-05     0.061   10.7   0.0     8    39   274   305   272   307 0.90 tig00000001_1695 # 1777038 # 1778063 # 1 # ID=1_1695;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.429
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/2040741at2.hmm
+# Target file:     /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /gorilla/home/asma7174/GA_project/code/busco_polished/run_bacteria_odb10/hmmer_output/2040741at2.out --cpu 1 /sw/data/local/BUSCO_Data/v5/lineages/bacteria_odb10/hmms/2040741at2.hmm /gorilla/home/asma7174/GA_project/code/busco_polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /gorilla/home/asma7174/GA_project/code
+# Date:            Mon Apr 20 22:42:00 2026
+# [ok]

@@ -1,0 +1,61 @@
+/sw/arch/eb/software/QUAST/5.3.0-gfbf-2024a/bin/quast /home/asma7174/GA_project/02_assembly/canu/output/assembly.contigs.fasta -o /home/asma7174/GA_project/03_evaluation/unpolished_quast -t 4
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-5.14.0-611.41.1.el9_7.x86_64-x86_64-with-glibc2.34 (linux_64)
+  Python version: 3.12.3
+  CPUs number: 96
+
+Started: 2026-04-23 19:17:52
+
+Logging to /home/asma7174/GA_project/03_evaluation/unpolished_quast/quast.log
+
+CWD: /gorilla/home/asma7174/GA_project/code
+Main parameters: 
+  MODE: default, threads: 4, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Contigs:
+  Pre-processing...
+  /home/asma7174/GA_project/02_assembly/canu/output/assembly.contigs.fasta ==> assembly.contigs
+
+2026-04-23 19:18:00
+Running Basic statistics processor...
+  Contig files: 
+    assembly.contigs
+  Calculating N50 and L50...
+    assembly.contigs, N50 = 2775136, L50 = 1, auN = 2456808.1, Total length = 3155800, GC % = 37.79, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/basic_stats/GC_content_plot.pdf
+  Drawing assembly.contigs GC content plot...
+    saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/basic_stats/assembly.contigs_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2026-04-23 19:18:04
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2026-04-23 19:18:05
+RESULTS:
+  Text versions of total report are saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/report.html
+  PDF version (tables and plots) is saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/report.pdf
+  Icarus (contig browser) is saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/icarus.html
+  Log is saved to /home/asma7174/GA_project/03_evaluation/unpolished_quast/quast.log
+
+Finished: 2026-04-23 19:18:05
+Elapsed time: 0:00:13.056017
+NOTICEs: 1; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
