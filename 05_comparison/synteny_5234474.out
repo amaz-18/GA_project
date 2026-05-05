@@ -1,0 +1,12 @@
+
+
+Building a new DB, current time: 05/04/2026 23:34:41
+New DB name:   /gorilla/home/asma7174/GA_project/05_comparison/ref_db
+New DB title:  /home/asma7174/GA_project/data/reference_NCBI/efaecium_ref.fna
+Sequence type: Nucleotide
+Deleted existing Nucleotide BLAST database named /gorilla/home/asma7174/GA_project/05_comparison/ref_db
+Keep MBits: T
+Maximum file size: 3000000000B
+Adding sequences from FASTA; added 2 sequences in 0.0318341 seconds.
+
+
