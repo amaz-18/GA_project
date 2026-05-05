@@ -1,0 +1,8 @@
+prokka scripts are located in $EBROOTPROKKA/bin; databases are located in $EBROOTPROKKA/db
+[1;32mFunctional annotation of hits...[0m
+500 71.35154557228088 7.01 q/s (% mem usage: 3.60, % mem avail: 96.43)
+1000 105.18427562713623 9.51 q/s (% mem usage: 2.30, % mem avail: 97.68)
+1500 144.03247594833374 10.41 q/s (% mem usage: 3.50, % mem avail: 96.54)
+2000 183.00074338912964 10.93 q/s (% mem usage: 3.40, % mem avail: 96.60)
+2500 226.5957179069519 11.03 q/s (% mem usage: 3.50, % mem avail: 96.53)
+2959 243.49129605293274 12.15 q/s (% mem usage: 3.70, % mem avail: 96.32)

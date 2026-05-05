@@ -1,0 +1,2 @@
+prokka scripts are located in $EBROOTPROKKA/bin; databases are located in $EBROOTPROKKA/db
+[2026-04-28T01:00:40.012] error: *** JOB 5132839 ON p75 CANCELLED AT 2026-04-28T01:00:40 DUE TO TIME LIMIT ***
