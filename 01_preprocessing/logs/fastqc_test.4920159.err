@@ -1,0 +1,222 @@
+Lmod has detected the following error:
+
+*** PLEASE READ THIS ENTIRE MESSAGE ***
+
+---------------------------------------------------
+IMPORTANT -=- IMPORTANT -=- IMPORTANT -=- IMPORTANT
+---------------------------------------------------
+
+You are seeing this message because you tried to load the 'bioinfo-tools'
+module in Pelle.
+
+The 'bioinfo-tools' module is not available on Pelle. It is not necessary
+to load it to access bioinformatics software. On Pelle, bioinformatics
+modules can be loaded directly. This is different from Rackham.
+
+Many modules and module versions are already available on Pelle, but their
+names may be capitalised differently and their versions are in a different
+format. Use 'module avail modulename' or 'module spider modulename' to find
+the new naming and available versions for your module.
+
+For example, 'module avail samtools' shows (with a slightly different format):
+
+----------------------- /sw/arch/eb/modules/all ------------------------
+	SAMtools/0.1.20-GCC-13.3.0	SAMtools/1.19.2-GCC-13.3.0
+	SAMtools/1.3.1-GCC-13.3.0	SAMtools/1.21-GCC-13.3.0
+	SAMtools/1.12-GCC-13.3.0	SAMtools/1.22-GCC-13.3.0 (D)
+	SAMtools/1.13-GCC-13.3.0
+
+This tells you that the new spelling of the module is SAMtools and that there
+are seven available versions. The '(D)' mark indicates that SAMtools/1.22 is
+the default version loaded with 'module load SAMtools'. The default version
+will change as new versions are installed. We recommend always specifying
+module versions in your 'module load' commands.
+
+
+LOADING MODULES
+---------------
+
+You can specify the module version by using just the version.
+
+	module load SAMtools/1.21	(RECOMMENDED)
+
+or using the full version and what is called the toolchain:
+
+	module load SAMtools/1.21-GCC-13.3.0	(NOT RECOMMENDED)
+
+We strongly recommend using the first method for specifying the version.
+Toolchains (compilers, libraries, and associated utilities) are handled
+hierarchically: some tools require a more simple toolchain than others, and it
+is easier to ignore the toolchains. Also, the toolchain used to build a
+particular module version may change as we make updates, but this should not
+make any substantive difference to your use of the module. Toolchain names
+include: GCCcore GCC gfbf gompi foss intel intelmpi
+
+
+LET US KNOW
+-----------
+
+Contact UPPMAX support if
+
+ - A module you need appears to be missing
+ - You do not find your required version of a module
+ - You notice weirdness with the module system
+ - Or you have further questions about bioinformatics software on Pelle
+
+Email us at
+
+	support@uppmax.uu.se
+
+
+*** PLEASE READ THIS ENTIRE MESSAGE ***
+
+
+While processing the following module(s):
+    Module fullname       Module Filename
+    ---------------       ---------------
+    bioinfo-tools/latest  /sw/arch/local/modules/bioinfo-tools/latest.lua
+
+Started analysis of E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 5% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 10% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 15% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 20% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 25% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 30% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 35% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 40% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 45% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 50% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 55% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 60% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 65% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 70% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 75% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 80% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 85% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 90% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Approx 95% complete for E745-1.L500_SZAXPI015146-56_1_clean.fq.gz
+Started analysis of E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 5% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 10% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 15% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 20% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 25% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 30% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 35% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 40% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 45% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 50% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 55% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 60% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 65% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 70% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 75% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 80% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 85% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 90% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Approx 95% complete for E745-1.L500_SZAXPI015146-56_2_clean.fq.gz
+Started analysis of m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 5% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 15% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 20% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 30% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 40% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 45% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 55% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 60% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 70% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 80% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 85% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Approx 95% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.1.subreads.fastq.gz
+Started analysis of m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 5% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 10% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 20% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 25% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 30% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 40% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 45% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 50% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 60% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 65% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 70% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 80% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 85% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Approx 90% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.2.subreads.fastq.gz
+Started analysis of m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 5% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 10% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 15% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 25% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 30% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 35% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 45% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 50% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 55% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 65% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 70% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 75% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 80% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 90% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Approx 95% complete for m131023_233432_42174_c100519312550000001823081209281335_s1_X0.3.subreads.fastq.gz
+Started analysis of m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 5% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 10% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 15% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 20% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 25% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 30% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 35% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 40% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 45% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 50% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 55% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 60% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 65% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 70% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 75% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 80% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 85% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 90% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Approx 95% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.1.subreads.fastq.gz
+Started analysis of m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 5% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 10% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 15% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 20% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 25% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 30% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 35% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 40% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 45% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 50% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 55% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 60% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 65% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 70% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 75% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 80% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 85% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 90% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Approx 95% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.2.subreads.fastq.gz
+Started analysis of m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 5% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 10% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 15% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 20% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 25% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 30% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 35% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 40% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 45% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 50% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 55% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 60% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 65% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 70% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 75% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 80% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 85% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 90% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
+Approx 95% complete for m131024_200535_42174_c100563672550000001823084212221342_s1_p0.3.subreads.fastq.gz
