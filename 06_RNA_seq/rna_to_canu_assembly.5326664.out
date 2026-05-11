@@ -1,0 +1,12 @@
+ref_seq_len = 6311600
+count = 0, 1963361, 3155800, 4348239, 6311600
+BWT[5348164] = 4
+CP_SHIFT = 6, CP_MASK = 63
+sizeof CP_OCC = 64
+max_occ_ind = 98618
+Mapping CONTROL sample ERR1797972 to Canu assembly
+Mapping CONTROL sample ERR1797973 to Canu assembly
+Mapping CONTROL sample ERR1797974 to Canu assembly
+Mapping SERUM sample ERR1797969 to Canu assembly
+Mapping SERUM sample ERR1797970 to Canu assembly
+Mapping SERUM sample ERR1797971 to Canu assembly
