@@ -1,0 +1,1310 @@
+-- canu 2.3
+--
+-- CITATIONS
+--
+-- For 'standard' assemblies of PacBio or Nanopore reads:
+--   Koren S, Walenz BP, Berlin K, Miller JR, Phillippy AM.
+--   Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation.
+--   Genome Res. 2017 May;27(5):722-736.
+--   http://doi.org/10.1101/gr.215087.116
+-- 
+-- Read and contig alignments during correction and consensus use:
+--   Šošic M, Šikic M.
+--   Edlib: a C/C ++ library for fast, exact sequence alignment using edit distance.
+--   Bioinformatics. 2017 May 1;33(9):1394-1395.
+--   http://doi.org/10.1093/bioinformatics/btw753
+-- 
+-- Overlaps are generated using:
+--   Berlin K, et al.
+--   Assembling large genomes with single-molecule sequencing and locality-sensitive hashing.
+--   Nat Biotechnol. 2015 Jun;33(6):623-30.
+--   http://doi.org/10.1038/nbt.3238
+-- 
+--   Myers EW, et al.
+--   A Whole-Genome Assembly of Drosophila.
+--   Science. 2000 Mar 24;287(5461):2196-204.
+--   http://doi.org/10.1126/science.287.5461.2196
+-- 
+-- Corrected read consensus sequences are generated using an algorithm derived from FALCON-sense:
+--   Chin CS, et al.
+--   Phased diploid genome assembly with single-molecule real-time sequencing.
+--   Nat Methods. 2016 Dec;13(12):1050-1054.
+--   http://doi.org/10.1038/nmeth.4035
+-- 
+-- Contig consensus sequences are generated using an algorithm derived from pbdagcon:
+--   Chin CS, et al.
+--   Nonhybrid, finished microbial genome assemblies from long-read SMRT sequencing data.
+--   Nat Methods. 2013 Jun;10(6):563-9
+--   http://doi.org/10.1038/nmeth.2474
+-- 
+-- CONFIGURE CANU
+--
+-- Detected Java(TM) Runtime Environment '17.0.15' (from '/sw/arch/eb/software/Java/17.0.15/bin/java') without -d64 support.
+-- Detected gnuplot version '6.0 patchlevel 1   ' (from 'gnuplot') and image format 'png'.
+--
+-- Detected 4 CPUs and 23 gigabytes of memory on the local machine.
+--
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+--          Slurm disabled by useGrid=false
+--
+-- Local machine mode enabled; grid support not detected or not allowed.
+--
+-- Found PacBio CLR reads in 'assembly.seqStore':
+--   Libraries:
+--     PacBio CLR:            6
+--   Reads:
+--     Raw:                   533813323
+--
+--
+--                                (tag)Concurrency
+--                         (tag)Threads          |
+--                (tag)Memory         |          |
+--        (tag)             |         |          |       total usage      algorithm
+--        -------  ----------  --------   --------  --------------------  -----------------------------
+-- Local: meryl     12.000 GB    4 CPUs x   1 job     12.000 GB   4 CPUs  (k-mer counting)
+-- Local: cormhap    6.000 GB    4 CPUs x   1 job      6.000 GB   4 CPUs  (overlap detection with mhap)
+-- Local: obtovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: utgovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: cor        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (read correction)
+-- Local: ovb        4.000 GB    1 CPU  x   4 jobs    16.000 GB   4 CPUs  (overlap store bucketizer)
+-- Local: ovs        8.000 GB    1 CPU  x   2 jobs    16.000 GB   2 CPUs  (overlap store sorting)
+-- Local: red       16.000 GB    4 CPUs x   1 job     16.000 GB   4 CPUs  (read error detection)
+-- Local: oea        8.000 GB    1 CPU  x   2 jobs    16.000 GB   2 CPUs  (overlap error adjustment)
+-- Local: bat       16.000 GB    4 CPUs x   1 job     16.000 GB   4 CPUs  (contig construction with bogart)
+-- Local: cns        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (consensus)
+--
+-- Generating assembly 'assembly' in '/gorilla/home/asma7174/GA_project/02_assembly/canu/output':
+--   genomeSize:
+--     3200000
+--
+--   Overlap Generation Limits:
+--     corOvlErrorRate 0.2400 ( 24.00%)
+--     obtOvlErrorRate 0.0450 (  4.50%)
+--     utgOvlErrorRate 0.0450 (  4.50%)
+--
+--   Overlap Processing Limits:
+--     corErrorRate    0.2500 ( 25.00%)
+--     obtErrorRate    0.0450 (  4.50%)
+--     utgErrorRate    0.0450 (  4.50%)
+--     cnsErrorRate    0.0750 (  7.50%)
+--
+--   Stages to run:
+--     correct raw reads.
+--     trim corrected reads.
+--     assemble corrected and trimmed reads.
+--
+--
+-- BEGIN CORRECTION
+--
+-- OVERLAPPER (mhap) (correction) complete, not rewriting scripts.
+--
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cormhap' concurrent execution on Mon Apr 20 14:21:20 2026 with 32132.761 GB free disk space (6 processes; 1 concurrently)
+
+    cd correction/1-overlapper
+    ./precompute.sh 2 > ./precompute.000002.out 2>&1
+    ./precompute.sh 3 > ./precompute.000003.out 2>&1
+    ./precompute.sh 4 > ./precompute.000004.out 2>&1
+    ./precompute.sh 5 > ./precompute.000005.out 2>&1
+    ./precompute.sh 6 > ./precompute.000006.out 2>&1
+    ./precompute.sh 7 > ./precompute.000007.out 2>&1
+
+-- Finished on Mon Apr 20 14:39:41 2026 (1101 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- All 7 mhap precompute jobs finished successfully.
+-- Finished stage 'cor-mhapPrecomputeCheck', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cormhap' concurrent execution on Mon Apr 20 14:39:41 2026 with 32132.761 GB free disk space (13 processes; 1 concurrently)
+
+    cd correction/1-overlapper
+    ./mhap.sh 1 > ./mhap.000001.out 2>&1
+    ./mhap.sh 2 > ./mhap.000002.out 2>&1
+    ./mhap.sh 3 > ./mhap.000003.out 2>&1
+    ./mhap.sh 4 > ./mhap.000004.out 2>&1
+    ./mhap.sh 5 > ./mhap.000005.out 2>&1
+    ./mhap.sh 6 > ./mhap.000006.out 2>&1
+    ./mhap.sh 7 > ./mhap.000007.out 2>&1
+    ./mhap.sh 8 > ./mhap.000008.out 2>&1
+    ./mhap.sh 9 > ./mhap.000009.out 2>&1
+    ./mhap.sh 10 > ./mhap.000010.out 2>&1
+    ./mhap.sh 11 > ./mhap.000011.out 2>&1
+    ./mhap.sh 12 > ./mhap.000012.out 2>&1
+    ./mhap.sh 13 > ./mhap.000013.out 2>&1
+
+-- Finished on Mon Apr 20 14:41:37 2026 (116 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 13 mhap overlap output files.
+-- Finished stage 'cor-mhapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 14:41:37 2026 with 32132.761 GB free disk space
+
+    cd correction
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreConfig \
+     -S ../assembly.seqStore \
+     -M 4-8 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./assembly.ovlStore.config \
+     > ./assembly.ovlStore.config.txt \
+    2> ./assembly.ovlStore.config.err
+
+-- Finished on Mon Apr 20 14:41:37 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store correction/assembly.ovlStore using:
+--      1 bucket
+--      1 slice
+--        using at most 1 GB memory each
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Mon Apr 20 14:41:37 2026 with 32132.761 GB free disk space (1 processes; 2 concurrently)
+
+    cd correction
+    ./assembly.ovlStore.sh 1 > ./assembly.ovlStore.000001.out 2>&1
+
+-- Finished on Mon Apr 20 14:41:38 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Mon Apr 20 14:41:38 2026 with 32132.761 GB free disk space
+
+    cd correction
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreDump \
+     -S ../assembly.seqStore \
+     -O  ./assembly.ovlStore \
+     -counts \
+     > ./assembly.ovlStore/counts.dat 2> ./assembly.ovlStore/counts.err
+
+-- Finished on Mon Apr 20 14:41:38 2026 (like a bat out of hell) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'correction/assembly.ovlStore' successfully constructed.
+-- Found 7118626 overlaps for 87233 reads; 13603 reads have no overlaps.
+--
+--
+-- Purged 1.775 GB in 33 overlap output files.
+-- Finished stage 'cor-createOverlapStore', reset canuIteration.
+-- Set corMinCoverage=4 based on read coverage of 166.81.
+-- Computing correction layouts.
+--   Local  filter coverage   80
+--   Global filter coverage   40
+----------------------------------------
+-- Starting command on Mon Apr 20 14:41:39 2026 with 32132.761 GB free disk space
+
+    cd correction
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/generateCorrectionLayouts \
+      -S ../assembly.seqStore \
+      -O  ./assembly.ovlStore \
+      -C  ./assembly.corStore.WORKING \
+      -eC 80 \
+      -xC 40 \
+    > ./assembly.corStore.err 2>&1
+
+-- Finished on Mon Apr 20 14:41:39 2026 (fast as lightning) with 32132.761 GB free disk space
+----------------------------------------
+-- Finished stage 'cor-buildCorrectionLayoutsConfigure', reset canuIteration.
+-- Computing correction layouts.
+----------------------------------------
+-- Starting command on Mon Apr 20 14:41:40 2026 with 32132.761 GB free disk space
+
+    cd correction/2-correction
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/filterCorrectionLayouts \
+      -S  ../../assembly.seqStore \
+      -C     ../assembly.corStore \
+      -R      ./assembly.readsToCorrect.WORKING \
+      -cc 4 \
+      -cl 1000 \
+      -g  3200000 \
+      -c  40 \
+    > ./assembly.readsToCorrect.err 2>&1
+
+-- Finished on Mon Apr 20 14:41:40 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--                             original      original
+--                            raw reads     raw reads
+--   category                w/overlaps  w/o/overlaps
+--   -------------------- ------------- -------------
+--   Number of Reads              77120         23716
+--   Number of Bases          424235527      44270436
+--   Coverage                   132.574        13.835
+--   Median                        4942             0
+--   Mean                          5500          1866
+--   N50                           7019          5948
+--   Minimum                       1000             0
+--   Maximum                      21204         20592
+--   
+--                                        --------corrected---------  ----------rescued----------
+--                             evidence                     expected                     expected
+--   category                     reads            raw     corrected            raw     corrected
+--   -------------------- -------------  ------------- -------------  ------------- -------------
+--   Number of Reads              77805          13877         13877            323           323
+--   Number of Bases          429549642      135597518     128004579        1419741        657381
+--   Coverage                   134.234         42.374        40.001          0.444         0.205
+--   Median                        4954           9186          8656           3650          1701
+--   Mean                          5520           9771          9224           4395          2035
+--   N50                           7004           9732          9039           5980          2280
+--   Minimum                       1000           7084          7083           1093          1001
+--   Maximum                      20948          19923         18422          15572          5821
+--   
+--                        --------uncorrected--------
+--                                           expected
+--   category                       raw     corrected
+--   -------------------- ------------- -------------
+--   Number of Reads              86636         86636
+--   Number of Bases          331488704     176521003
+--   Coverage                   103.590        55.163
+--   Median                        3487          1121
+--   Mean                          3826          2037
+--   N50                           5688          4856
+--   Minimum                          0             0
+--   Maximum                      21204         18970
+--   
+--   Maximum Memory           714635102
+-- Finished stage 'cor-filterCorrectionLayouts', reset canuIteration.
+--
+-- Correction jobs estimated to need at most 0.665 GB for computation.
+-- Correction jobs will request 6 GB each.
+--
+-- Local: cor        6.000 GB    4 CPUs x   1 job      6.000 GB   4 CPUs  (read correction)
+--
+--
+-- Configuring correction jobs:
+--   Reads estimated to need at most 0.665 GB for computation.
+--   Jobs will request 6 GB each.
+----------------------------------------
+-- Starting command on Mon Apr 20 14:41:40 2026 with 32132.761 GB free disk space
+
+    cd correction/2-correction
+    ./correctReadsPartition.sh \
+    > ./correctReadsPartition.err 2>&1
+
+-- Finished on Mon Apr 20 14:41:40 2026 (furiously fast) with 32132.761 GB free disk space
+----------------------------------------
+-- Finished stage 'cor-generateCorrectedReadsConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cor' concurrent execution on Mon Apr 20 14:41:40 2026 with 32132.761 GB free disk space (2 processes; 1 concurrently)
+
+    cd correction/2-correction
+    ./correctReads.sh 1 > ./correctReads.000001.out 2>&1
+    ./correctReads.sh 2 > ./correctReads.000002.out 2>&1
+
+-- Finished on Mon Apr 20 15:04:14 2026 (1354 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 2 read correction output files.
+-- Finished stage 'cor-generateCorrectedReadsCheck', reset canuIteration.
+-- Found 2 read correction output files.
+-- Finished stage 'cor-generateCorrectedReadsCheck', reset canuIteration.
+--
+-- Loading corrected reads into corStore and seqStore.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:04:14 2026 with 32132.761 GB free disk space
+
+    cd correction
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/loadCorrectedReads \
+      -S ../assembly.seqStore \
+      -C ./assembly.corStore \
+      -L ./2-correction/corjob.files \
+    >  ./assembly.loadCorrectedReads.log \
+    2> ./assembly.loadCorrectedReads.err
+
+-- Finished on Mon Apr 20 15:04:15 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- In sequence store './assembly.seqStore':
+--   Found 13749 reads.
+--   Found 114228681 bases (35.69 times coverage).
+--    Histogram of corrected reads:
+--    
+--    G=114228681                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        11976       855     11428408  ||       1002-1420           97|----
+--    00020        10486      1881     22847048  ||       1421-1839           41|--
+--    00030         9594      3022     34270305  ||       1840-2258           53|--
+--    00040         8889      4260     45693197  ||       2259-2677           43|--
+--    00050         8363      5587     57119220  ||       2678-3096           55|--
+--    00060         7936      6989     68537564  ||       3097-3515           52|--
+--    00070         7539      8466     79960458  ||       3516-3934           58|--
+--    00080         7202     10017     91385126  ||       3935-4353           65|---
+--    00090         6851     11640    102810935  ||       4354-4772          103|----
+--    00100         1002     13749    114228681  ||       4773-5191          104|----
+--    001.000x               13749    114228681  ||       5192-5610          120|----
+--                                               ||       5611-6029          174|------
+--                                               ||       6030-6448          245|--------
+--                                               ||       6449-6867          949|-------------------------------
+--                                               ||       6868-7286         1962|---------------------------------------------------------------
+--                                               ||       7287-7705         1813|-----------------------------------------------------------
+--                                               ||       7706-8124         1472|------------------------------------------------
+--                                               ||       8125-8543         1264|-----------------------------------------
+--                                               ||       8544-8962          964|-------------------------------
+--                                               ||       8963-9381          750|-------------------------
+--                                               ||       9382-9800          637|---------------------
+--                                               ||       9801-10219         555|------------------
+--                                               ||      10220-10638         436|--------------
+--                                               ||      10639-11057         353|------------
+--                                               ||      11058-11476         265|---------
+--                                               ||      11477-11895         234|--------
+--                                               ||      11896-12314         179|------
+--                                               ||      12315-12733         173|------
+--                                               ||      12734-13152         131|-----
+--                                               ||      13153-13571         112|----
+--                                               ||      13572-13990          77|---
+--                                               ||      13991-14409          63|---
+--                                               ||      14410-14828          43|--
+--                                               ||      14829-15247          32|--
+--                                               ||      15248-15666          29|-
+--                                               ||      15667-16085          21|-
+--                                               ||      16086-16504          12|-
+--                                               ||      16505-16923           8|-
+--                                               ||      16924-17342           1|-
+--                                               ||      17343-17761           4|-
+--    
+--
+-- Purging correctReads output after loading into stores.
+-- Purged 2 .cns outputs.
+-- Purged 4 .out job log outputs.
+--
+-- No corrected reads generated, overlaps used for correction saved.
+-- Finished stage 'cor-loadCorrectedReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:04:16 2026 with 32132.761 GB free disk space
+
+    cd .
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/sqStoreDumpFASTQ \
+      -corrected \
+      -S ./assembly.seqStore \
+      -o ./assembly.correctedReads.gz \
+      -fasta \
+      -nolibname \
+    > assembly.correctedReads.fasta.err 2>&1
+
+-- Finished on Mon Apr 20 15:04:17 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Corrected reads saved in 'assembly.correctedReads.fasta.gz'.
+-- Finished stage 'cor-dumpCorrectedReads', reset canuIteration.
+--
+-- BEGIN TRIMMING
+----------------------------------------
+-- Starting command on Mon Apr 20 15:04:17 2026 with 32132.761 GB free disk space
+
+    cd trimming/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Mon Apr 20 15:04:17 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.46 GB       2
+--        02  -.-- GB       -  (segment size too small)
+--        04  -.-- GB       -  (segment size too small)
+--        06  -.-- GB       -  (segment size too small)
+--        08  -.-- GB       -  (segment size too small)
+--        12  -.-- GB       -  (segment size too small)
+--        16  -.-- GB       -  (segment size too small)
+--        20  -.-- GB       -  (segment size too small)
+--        24  -.-- GB       -  (segment size too small)
+--        32  -.-- GB       -  (segment size too small)
+--        40  -.-- GB       -  (segment size too small)
+--        48  -.-- GB       -  (segment size too small)
+--        56  -.-- GB       -  (segment size too small)
+--        64  -.-- GB       -  (segment size too small)
+--        96  -.-- GB       -  (segment size too small)
+--
+--  For 13749 reads with 114228681 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- Finished stage 'merylConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Mon Apr 20 15:04:17 2026 with 32132.761 GB free disk space (1 processes; 1 concurrently)
+
+    cd trimming/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:04:22 2026 (5 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- Finished stage 'obt-merylCountCheck', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Mon Apr 20 15:04:22 2026 with 32132.761 GB free disk space (1 processes; 1 concurrently)
+
+    cd trimming/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:04:23 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  22-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2    285798 ******************************************                             0.0867 0.0052
+--       3-     4    131311 *******************                                                    0.1122 0.0075
+--       5-     7     99065 **************                                                         0.1366 0.0107
+--       8-    11    177240 **************************                                             0.1684 0.0174
+--      12-    16    226539 *********************************                                      0.2253 0.0353
+--      17-    22    277510 *****************************************                              0.2936 0.0660
+--      23-    29    339717 **************************************************                     0.3771 0.1171
+--      30-    37    453204 ******************************************************************     0.4836 0.2036
+--      38-    46    473584 ********************************************************************** 0.6205 0.3448
+--      47-    56    410647 ************************************************************           0.7624 0.5271
+--      57-    67    260879 **************************************                                 0.8825 0.7147
+--      68-    79     91884 *************                                                          0.9556 0.8505
+--      80-    92     24230 ***                                                                    0.9806 0.9053
+--      93-   106     10524 *                                                                      0.9872 0.9220
+--     107-   121      5226                                                                        0.9901 0.9308
+--     122-   137      8620 *                                                                      0.9918 0.9367
+--     138-   154      1592                                                                        0.9942 0.9458
+--     155-   172       940                                                                        0.9947 0.9479
+--     173-   191      2449                                                                        0.9950 0.9494
+--     192-   211      1073                                                                        0.9957 0.9534
+--     212-   232      1466                                                                        0.9960 0.9553
+--     233-   254      1086                                                                        0.9965 0.9582
+--     255-   277       776                                                                        0.9968 0.9608
+--     278-   301      1153                                                                        0.9970 0.9626
+--     302-   326      1586                                                                        0.9974 0.9655
+--     327-   352       346                                                                        0.9979 0.9701
+--     353-   379       351                                                                        0.9980 0.9711
+--     380-   407      1272                                                                        0.9981 0.9722
+--     408-   436      2504                                                                        0.9985 0.9770
+--     437-   466       901                                                                        0.9993 0.9870
+--     467-   497        30                                                                        0.9995 0.9900
+--     498-   529        32                                                                        0.9995 0.9901
+--     530-   562        70                                                                        0.9995 0.9903
+--     563-   596       288                                                                        0.9995 0.9906
+--     597-   631       363                                                                        0.9996 0.9922
+--     632-   667       248                                                                        0.9997 0.9942
+--     668-   704       408                                                                        0.9998 0.9957
+--     705-   742       210                                                                        0.9999 0.9982
+--     743-   781         8                                                                        1.0000 0.9995
+--     782-   821         5                                                                        1.0000 0.9996
+--
+--           0 (max occurrences)
+--   110243068 (total mers, non-unique)
+--     3295171 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'trimming/0-mercounts/assembly.ms22'.
+--
+-- OVERLAPPER (normal) (trimming) erate=0.045
+--
+----------------------------------------
+-- Starting command on Mon Apr 20 15:04:23 2026 with 32132.761 GB free disk space
+
+    cd trimming/1-overlapper
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/overlapInCorePartition \
+     -S  ../../assembly.seqStore \
+     -hl 80000000 \
+     -rl 1000000000 \
+     -ol 500 \
+     -o  ./assembly.partition \
+    > ./assembly.partition.err 2>&1
+
+-- Finished on Mon Apr 20 15:04:24 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Configured 2 overlapInCore jobs.
+-- Finished stage 'obt-overlapConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'obtovl' concurrent execution on Mon Apr 20 15:04:24 2026 with 32132.761 GB free disk space (2 processes; 1 concurrently)
+
+    cd trimming/1-overlapper
+    ./overlap.sh 1 > ./overlap.000001.out 2>&1
+    ./overlap.sh 2 > ./overlap.000002.out 2>&1
+
+-- Finished on Mon Apr 20 15:06:13 2026 (109 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 2 overlapInCore output files.
+--
+-- overlapInCore compute 'trimming/1-overlapper':
+--   kmer hits
+--     with no overlap          3710320     1855160 +- 15293.305
+--     with an overlap          1243223    621611.5 +- 23152.797
+--
+--   overlaps                   1243211    621605.5 +- 23151.383
+--     contained                      0           0 +- 0
+--     dovetail                       0           0 +- 0
+--
+--   overlaps rejected
+--     multiple per pair              0           0 +- 0
+--     bad short window               0           0 +- 0
+--     bad long window                0           0 +- 0
+-- Finished stage 'obt-overlapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:13 2026 with 32132.761 GB free disk space
+
+    cd trimming
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreConfig \
+     -S ../assembly.seqStore \
+     -M 3 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./assembly.ovlStore.config \
+     > ./assembly.ovlStore.config.txt \
+    2> ./assembly.ovlStore.config.err
+
+-- Finished on Mon Apr 20 15:06:13 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store trimming/assembly.ovlStore using:
+--      1 bucket
+--      1 slice
+--        using at most 1 GB memory each
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Mon Apr 20 15:06:13 2026 with 32132.761 GB free disk space (1 processes; 2 concurrently)
+
+    cd trimming
+    ./assembly.ovlStore.sh 1 > ./assembly.ovlStore.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:06:14 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:14 2026 with 32132.761 GB free disk space
+
+    cd trimming
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreDump \
+     -S ../assembly.seqStore \
+     -O  ./assembly.ovlStore \
+     -counts \
+     > ./assembly.ovlStore/counts.dat 2> ./assembly.ovlStore/counts.err
+
+-- Finished on Mon Apr 20 15:06:14 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'trimming/assembly.ovlStore' successfully constructed.
+-- Found 2486446 overlaps for 13748 reads; 87088 reads have no overlaps.
+--
+--
+-- Purged 0.023 GB in 6 overlap output files.
+-- Finished stage 'obt-createOverlapStore', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:14 2026 with 32132.761 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/trimReads \
+      -S  ../../assembly.seqStore \
+      -O  ../assembly.ovlStore \
+      -Co ./assembly.1.trimReads.clear \
+      -e  0.045 \
+      -minlength 1000 \
+      -ol 500 \
+      -oc 2 \
+      -o  ./assembly.1.trimReads \
+    >     ./assembly.1.trimReads.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:16 2026 (2 seconds) with 32132.761 GB free disk space
+----------------------------------------
+--  PARAMETERS:
+--  ----------
+--     1000    (reads trimmed below this many bases are deleted)
+--   0.0450    (use overlaps at or below this fraction error)
+--      500    (break region if overlap is less than this long, for 'largest covered' algorithm)
+--        2    (break region if overlap coverage is less than this many reads, for 'largest covered' algorithm)
+--  
+--  INPUT READS:
+--  -----------
+--  100836 reads    114228681 bases (reads processed)
+--       0 reads            0 bases (reads not processed, previously deleted)
+--       0 reads            0 bases (reads not processed, in a library where trimming isn't allowed)
+--  
+--  OUTPUT READS:
+--  ------------
+--    8221 reads     63977045 bases (trimmed reads output)
+--    5489 reads     45463336 bases (reads with no change, kept as is)
+--   87088 reads         2559 bases (reads with no overlaps, deleted)
+--      38 reads        83903 bases (reads with short trimmed length, deleted)
+--  
+--  TRIMMING DETAILS:
+--  ----------------
+--    5089 reads      1976368 bases (bases trimmed from the 5' end of a read)
+--    4907 reads      2725470 bases (bases trimmed from the 3' end of a read)
+-- Finished stage 'obt-trimReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:16 2026 with 32132.761 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/splitReads \
+      -S  ../../assembly.seqStore \
+      -O  ../assembly.ovlStore \
+      -Ci ./assembly.1.trimReads.clear \
+      -Co ./assembly.2.splitReads.clear \
+      -e  0.045 \
+      -minlength 1000 \
+      -o  ./assembly.2.splitReads \
+    >     ./assembly.2.splitReads.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:16 2026 (furiously fast) with 32132.761 GB free disk space
+----------------------------------------
+--  PARAMETERS:
+--  ----------
+--     1000    (reads trimmed below this many bases are deleted)
+--   0.0450    (use overlaps at or below this fraction error)
+--  INPUT READS:
+--  -----------
+--   13710 reads    114142219 bases (reads processed)
+--   87126 reads        86462 bases (reads not processed, previously deleted)
+--       0 reads            0 bases (reads not processed, in a library where trimming isn't allowed)
+--  
+--  PROCESSED:
+--  --------
+--       0 reads            0 bases (no overlaps)
+--       1 reads         2645 bases (no coverage after adjusting for trimming done already)
+--       0 reads            0 bases (processed for chimera)
+--       0 reads            0 bases (processed for spur)
+--   13709 reads    114139574 bases (processed for subreads)
+--  
+--  READS WITH SIGNALS:
+--  ------------------
+--       0 reads            0 signals (number of 5' spur signal)
+--       0 reads            0 signals (number of 3' spur signal)
+--       0 reads            0 signals (number of chimera signal)
+--      12 reads           12 signals (number of subread signal)
+--  
+--  SIGNALS:
+--  -------
+--       0 reads            0 bases (size of 5' spur signal)
+--       0 reads            0 bases (size of 3' spur signal)
+--       0 reads            0 bases (size of chimera signal)
+--      12 reads         3699 bases (size of subread signal)
+--  
+--  TRIMMING:
+--  --------
+--       5 reads        20715 bases (trimmed from the 5' end of the read)
+--       7 reads        30744 bases (trimmed from the 3' end of the read)
+-- Finished stage 'obt-splitReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:16 2026 with 32132.761 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/loadTrimmedReads \
+      -S ../../assembly.seqStore \
+      -c ./assembly.2.splitReads.clear \
+    > ./assembly.loadTrimmedReads.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:17 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- In sequence store './assembly.seqStore':
+--   Found 13710 reads.
+--   Found 109388922 bases (34.18 times coverage).
+--    Histogram of corrected-trimmed reads:
+--    
+--    G=109388922                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        11212       874     10943366  ||       1001-1400           92|---
+--    00020         9989      1914     21885003  ||       1401-1800           49|--
+--    00030         9177      3059     32823420  ||       1801-2200           63|---
+--    00040         8579      4293     43756620  ||       2201-2600           50|--
+--    00050         8128      5605     54702533  ||       2601-3000           63|---
+--    00060         7728      6985     65638958  ||       3001-3400           72|---
+--    00070         7371      8435     76577016  ||       3401-3800           61|--
+--    00080         7058      9952     87517949  ||       3801-4200           79|---
+--    00090         6638     11542     98450625  ||       4201-4600          113|----
+--    00100         1001     13710    109388922  ||       4601-5000          156|------
+--    001.000x               13710    109388922  ||       5001-5400          150|-----
+--                                               ||       5401-5800          229|--------
+--                                               ||       5801-6200          338|-----------
+--                                               ||       6201-6600          563|-------------------
+--                                               ||       6601-7000         1388|---------------------------------------------
+--                                               ||       7001-7400         1956|---------------------------------------------------------------
+--                                               ||       7401-7800         1562|---------------------------------------------------
+--                                               ||       7801-8200         1342|--------------------------------------------
+--                                               ||       8201-8600         1132|-------------------------------------
+--                                               ||       8601-9000          862|----------------------------
+--                                               ||       9001-9400          708|-----------------------
+--                                               ||       9401-9800          537|------------------
+--                                               ||       9801-10200         471|----------------
+--                                               ||      10201-10600         376|-------------
+--                                               ||      10601-11000         301|----------
+--                                               ||      11001-11400         218|--------
+--                                               ||      11401-11800         189|-------
+--                                               ||      11801-12200         132|-----
+--                                               ||      12201-12600         128|-----
+--                                               ||      12601-13000          88|---
+--                                               ||      13001-13400          82|---
+--                                               ||      13401-13800          47|--
+--                                               ||      13801-14200          35|--
+--                                               ||      14201-14600          23|-
+--                                               ||      14601-15000          22|-
+--                                               ||      15001-15400          13|-
+--                                               ||      15401-15800           9|-
+--                                               ||      15801-16200           6|-
+--                                               ||      16201-16600           3|-
+--                                               ||      16601-17000           2|-
+--    
+--
+-- No trimmed reads generated, overlaps used for trimming saved.
+-- Finished stage 'obt-dumpReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:17 2026 with 32132.761 GB free disk space
+
+    cd .
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/sqStoreDumpFASTQ \
+      -trimmed \
+      -S ./assembly.seqStore \
+      -o ./assembly.trimmedReads.gz \
+      -fasta \
+      -trimmed -normal -nolibname \
+    > ./assembly.trimmedReads.fasta.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:18 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Trimmed reads saved in 'assembly.trimmedReads.fasta.gz'.
+-- Finished stage 'cor-dumpTrimmedReads', reset canuIteration.
+--
+-- BEGIN ASSEMBLY
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:18 2026 with 32132.761 GB free disk space
+
+    cd unitigging/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:18 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.44 GB       2
+--        02  -.-- GB       -  (segment size too small)
+--        04  -.-- GB       -  (segment size too small)
+--        06  -.-- GB       -  (segment size too small)
+--        08  -.-- GB       -  (segment size too small)
+--        12  -.-- GB       -  (segment size too small)
+--        16  -.-- GB       -  (segment size too small)
+--        20  -.-- GB       -  (segment size too small)
+--        24  -.-- GB       -  (segment size too small)
+--        32  -.-- GB       -  (segment size too small)
+--        40  -.-- GB       -  (segment size too small)
+--        48  -.-- GB       -  (segment size too small)
+--        56  -.-- GB       -  (segment size too small)
+--        64  -.-- GB       -  (segment size too small)
+--        96  -.-- GB       -  (segment size too small)
+--
+--  For 13710 reads with 109388922 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- Finished stage 'merylConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Mon Apr 20 15:06:18 2026 with 32132.761 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:06:23 2026 (5 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- Finished stage 'utg-merylCountCheck', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Mon Apr 20 15:06:23 2026 with 32132.761 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:06:24 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  22-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2    244293 ***********************************                                    0.0757 0.0046
+--       3-     4    117843 *****************                                                      0.1003 0.0068
+--       5-     7    107690 ***************                                                        0.1227 0.0099
+--       8-    11    183997 **************************                                             0.1577 0.0174
+--      12-    16    223101 ********************************                                       0.2166 0.0362
+--      17-    22    286657 ******************************************                             0.2876 0.0687
+--      23-    29    370132 ******************************************************                 0.3754 0.1234
+--      30-    37    461385 *******************************************************************    0.4933 0.2207
+--      38-    46    477134 ********************************************************************** 0.6359 0.3702
+--      47-    56    398252 **********************************************************             0.7806 0.5589
+--      57-    67    228387 *********************************                                      0.8986 0.7459
+--      68-    79     68681 **********                                                             0.9638 0.8689
+--      80-    92     18327 **                                                                     0.9827 0.9111
+--      93-   106      8600 *                                                                      0.9879 0.9248
+--     107-   121      8700 *                                                                      0.9904 0.9322
+--     122-   137      4320                                                                        0.9932 0.9422
+--     138-   154      1107                                                                        0.9943 0.9467
+--     155-   172      1561                                                                        0.9947 0.9482
+--     173-   191      2148                                                                        0.9952 0.9507
+--     192-   211      1411                                                                        0.9958 0.9543
+--     212-   232      1338                                                                        0.9962 0.9570
+--     233-   254       731                                                                        0.9967 0.9598
+--     255-   277       763                                                                        0.9969 0.9614
+--     278-   301      1327                                                                        0.9971 0.9635
+--     302-   326      1158                                                                        0.9976 0.9672
+--     327-   352       255                                                                        0.9979 0.9703
+--     353-   379       397                                                                        0.9980 0.9712
+--     380-   407      1783                                                                        0.9981 0.9727
+--     408-   436      2700                                                                        0.9987 0.9794
+--     437-   466        38                                                                        0.9995 0.9899
+--     467-   497        31                                                                        0.9995 0.9900
+--     498-   529        63                                                                        0.9995 0.9902
+--     530-   562       102                                                                        0.9995 0.9905
+--     563-   596       464                                                                        0.9995 0.9910
+--     597-   631       217                                                                        0.9997 0.9936
+--     632-   667       437                                                                        0.9998 0.9948
+--     668-   704       278                                                                        0.9999 0.9976
+--     705-   742        48                                                                        1.0000 0.9993
+--     743-   781         7                                                                        1.0000 0.9996
+--     782-   821         6                                                                        1.0000 0.9996
+--
+--           0 (max occurrences)
+--   106090526 (total mers, non-unique)
+--     3225899 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'unitigging/0-mercounts/assembly.ms22'.
+--
+-- OVERLAPPER (normal) (assembly) erate=0.045
+--
+----------------------------------------
+-- Starting command on Mon Apr 20 15:06:24 2026 with 32132.761 GB free disk space
+
+    cd unitigging/1-overlapper
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/overlapInCorePartition \
+     -S  ../../assembly.seqStore \
+     -hl 80000000 \
+     -rl 1000000000 \
+     -ol 500 \
+     -o  ./assembly.partition \
+    > ./assembly.partition.err 2>&1
+
+-- Finished on Mon Apr 20 15:06:24 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Configured 2 overlapInCore jobs.
+-- Finished stage 'utg-overlapConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'utgovl' concurrent execution on Mon Apr 20 15:06:25 2026 with 32132.761 GB free disk space (2 processes; 1 concurrently)
+
+    cd unitigging/1-overlapper
+    ./overlap.sh 1 > ./overlap.000001.out 2>&1
+    ./overlap.sh 2 > ./overlap.000002.out 2>&1
+
+-- Finished on Mon Apr 20 15:09:46 2026 (202 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 2 overlapInCore output files.
+--
+-- overlapInCore compute 'unitigging/1-overlapper':
+--   kmer hits
+--     with no overlap          4041178     2020589 +- 210443.463
+--     with an overlap           572485    286242.5 +- 23338.059
+--
+--   overlaps                    572485    286242.5 +- 23338.059
+--     contained                  81461     40730.5 +- 3062.479
+--     dovetail                  491024      245512 +- 20275.579
+--
+--   overlaps rejected
+--     multiple per pair              0           0 +- 0
+--     bad short window               0           0 +- 0
+--     bad long window                0           0 +- 0
+-- Finished stage 'utg-overlapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:09:46 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreConfig \
+     -S ../assembly.seqStore \
+     -M 3 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./assembly.ovlStore.config \
+     > ./assembly.ovlStore.config.txt \
+    2> ./assembly.ovlStore.config.err
+
+-- Finished on Mon Apr 20 15:09:46 2026 (furiously fast) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store unitigging/assembly.ovlStore using:
+--      1 bucket
+--      1 slice
+--        using at most 1 GB memory each
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Mon Apr 20 15:09:46 2026 with 32132.761 GB free disk space (1 processes; 2 concurrently)
+
+    cd unitigging
+    ./assembly.ovlStore.sh 1 > ./assembly.ovlStore.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:09:47 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:09:47 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreDump \
+     -S ../assembly.seqStore \
+     -O  ./assembly.ovlStore \
+     -counts \
+     > ./assembly.ovlStore/counts.dat 2> ./assembly.ovlStore/counts.err
+
+-- Finished on Mon Apr 20 15:09:47 2026 (lickety-split) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/assembly.ovlStore' successfully constructed.
+-- Found 1144970 overlaps for 13709 reads; 87127 reads have no overlaps.
+--
+--
+-- Purged 0.011 GB in 6 overlap output files.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:09:47 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/ovStoreStats \
+     -C 34.18 \
+     -S ../assembly.seqStore \
+     -O  ./assembly.ovlStore \
+     -o  ./assembly.ovlStore \
+     > ./assembly.ovlStore.summary.err 2>&1
+
+-- Finished on Mon Apr 20 15:09:47 2026 (furiously fast) with 32132.761 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/assembly.ovlStore' contains:
+--
+--   category            reads     %          read length        feature size or coverage  analysis
+--   ----------------  -------  -------  ----------------------  ------------------------  --------------------
+--   middle-missing          0    0.00        0.00 +- 0.00             0.00 +- 0.00       (bad trimming)
+--   middle-hump             1    0.01     2924.00 +- 0.00           650.00 +- 0.00       (bad trimming)
+--   no-5-prime              7    0.05     5200.86 +- 3518.54        123.71 +- 179.56     (bad trimming)
+--   no-3-prime              3    0.02     4237.67 +- 3181.63        171.33 +- 191.14     (bad trimming)
+--   
+--   low-coverage          148    1.08     5099.07 +- 2945.83          6.71 +- 2.55       (easy to assemble, potential for lower quality consensus)
+--   unique               6847   49.94     7847.96 +- 2043.58         35.63 +- 9.99       (easy to assemble, perfect, yay)
+--   repeat-cont           508    3.71     7094.63 +- 1896.60         88.24 +- 39.13      (potential for consensus errors, no impact on assembly)
+--   repeat-dove            18    0.13    11871.28 +- 1157.98         83.67 +- 27.99      (hard to assemble, likely won't assemble correctly or even at all)
+--   
+--   span-repeat          2272   16.57     8457.21 +- 2017.35       3203.91 +- 2614.35    (read spans a large repeat, usually easy to assemble)
+--   uniq-repeat-cont     3214   23.44     7729.38 +- 1491.17                             (should be uniquely placed, low potential for consensus errors, no impact on assembly)
+--   uniq-repeat-dove      507    3.70    10532.93 +- 1967.39                             (will end contigs, potential to misassemble)
+--   uniq-anchor           184    1.34     8857.22 +- 2073.55       2808.24 +- 1915.48    (repeat read, with unique section, probable bad read)
+-- Finished stage 'utg-createOverlapStore', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure RED for 16gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      500000000 bases.
+--                   Expecting evidence of at most 536870912 bases per iteration.
+--
+--           Total                                               Reads                 Olaps Evidence
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1 16384.06         1-100379        13683    108942021 13299.02      1139546    13.04  1024.00
+--      2  3137.17    100380-100836           66       533363    65.11         5424     0.06  1024.00
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                  109475384               1144970
+-- Finished stage 'readErrorDetectionConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'red' concurrent execution on Mon Apr 20 15:09:47 2026 with 32132.761 GB free disk space (2 processes; 1 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./red.sh 1 > ./red.000001.out 2>&1
+    ./red.sh 2 > ./red.000002.out 2>&1
+
+-- Finished on Mon Apr 20 15:10:06 2026 (19 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 2 read error detection output files.
+-- Finished stage 'readErrorDetectionCheck', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure OEA for 8gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      300000000 bases.
+--
+--           Total                                               Reads                 Olaps  Adjusts
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1  2522.86         1-100836        13749    109475384   112.82      1144970    34.94   327.10
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                  109475384               1144970
+-- Finished stage 'overlapErrorAdjustmentConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'oea' concurrent execution on Mon Apr 20 15:10:06 2026 with 32132.761 GB free disk space (1 processes; 2 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./oea.sh 1 > ./oea.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:10:13 2026 (7 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Found 1 overlap error adjustment output files.
+-- Finished stage 'overlapErrorAdjustmentCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:10:13 2026 with 32132.761 GB free disk space
+
+    cd unitigging/3-overlapErrorAdjustment
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/loadErates \
+      -S ../../assembly.seqStore \
+      -O ../assembly.ovlStore \
+      -L ./oea.files \
+    > ./oea.apply.err 2>&1
+
+-- Finished on Mon Apr 20 15:10:13 2026 (fast as lightning) with 32132.761 GB free disk space
+----------------------------------------
+-- No report available.
+-- Finished stage 'updateOverlapStore', reset canuIteration.
+-- Finished stage 'unitig', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'bat' concurrent execution on Mon Apr 20 15:10:13 2026 with 32132.761 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/4-unitigger
+    ./unitigger.sh 1 > ./unitigger.000001.out 2>&1
+
+-- Finished on Mon Apr 20 15:10:14 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Unitigger finished successfully.
+--  
+--  ERROR RATES
+--  -----------
+--                                                   --------threshold------
+--  15623                        fraction error      fraction        percent
+--  samples                              (1e-5)         error          error
+--                   --------------------------      --------       --------
+--  command line (-eg)                           ->   4500.00        4.5000%
+--  command line (-ef)                           ->  -----.--      ---.----%
+--  command line (-eM)                           ->   4500.00        4.5000%
+--  mean + std.dev      22.15 +-  12 *    77.48  ->    951.94        0.9519%  (enabled)
+--  median + mad         0.00 +-  12 *     0.00  ->      0.00        0.0000%
+--  90th percentile                              ->     75.00        0.0750%
+--  
+--  BEST EDGE FILTERING
+--  -------------------
+--  At graph threshold 4.5000%, reads:
+--    available to have edges:         1928
+--    with at least one edge:          1926
+--  
+--  At max threshold 4.5000%, reads:  (not computed)
+--    available to have edges:            0
+--    with at least one edge:             0
+--  
+--  At tight threshold 0.0750%, reads with:
+--    both edges below error threshold:       997  (80.00% minReadsBest threshold = 1540)
+--    one  edge  above error threshold:       550
+--    both edges above error threshold:       379
+--    at least one edge:                     1926
+--  
+--  At loose threshold 0.9519%, reads with:
+--    both edges below error threshold:      1915  (80.00% minReadsBest threshold = 1540)
+--    one  edge  above error threshold:        11
+--    both edges above error threshold:         0
+--    at least one edge:                     1926
+--  
+--  
+--  INITIAL EDGES
+--  -------- ----------------------------------------
+--     11767 reads are contained
+--     87141 reads have no best edges (singleton)
+--        12 reads have only one best edge (spur) 
+--                 12 are mutual best
+--      1916 reads have two best edges 
+--                  6 have one mutual best edge
+--               1905 have two mutual best edges
+--  
+--  
+--  FINAL EDGES
+--  -------- ----------------------------------------
+--     11767 reads are contained
+--     87146 reads have no best edges (singleton)
+--        11 reads have only one best edge (spur) 
+--                  9 are mutual best
+--      1912 reads have two best edges 
+--                  5 have one mutual best edge
+--               1904 have two mutual best edges
+--  
+--  
+--  EDGE FILTERING
+--  -------- ------------------------------------------
+--         0 reads are ignored
+--        12 reads have a gap in overlap coverage
+--         2 reads have lopsided best edges
+-- Found, in version 1, after unitig construction:
+--   contigs:      9 sequences, total length 3146378 bp (including 1 repeats of total length 7042 bp).
+--   bubbles:      1 sequences, total length 15023 bp.
+--   unassembled:  27 sequences, total length 147705 bp.
+--
+-- Contig sizes based on genome size 3.2mbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10     2780417             1     2780417
+--     20     2780417             1     2780417
+--     30     2780417             1     2780417
+--     40     2780417             1     2780417
+--     50     2780417             1     2780417
+--     60     2780417             1     2780417
+--     70     2780417             1     2780417
+--     80     2780417             1     2780417
+--     90      218804             2     2999221
+--
+-- Finished stage 'unitigCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:10:14 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/utgcns \
+      -S ../assembly.seqStore \
+      -T  ./assembly.ctgStore 1 \
+      -partition 0.8 1 0.1 \
+    > ./assembly.ctgStore/partitioning.log 2>&1
+
+-- Finished on Mon Apr 20 15:10:15 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 2 consensus jobs.
+-- Finished stage 'consensusConfigure', reset canuIteration.
+--
+-- Local: cns        3.125 GB    4 CPUs x   1 job      3.125 GB   4 CPUs  (consensus)
+--
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cns' concurrent execution on Mon Apr 20 15:10:15 2026 with 32132.761 GB free disk space (2 processes; 1 concurrently)
+
+    cd unitigging/5-consensus
+    ./consensus.sh 1 > ./consensus.000001.out 2>&1
+    ./consensus.sh 2 > ./consensus.000002.out 2>&1
+
+-- Finished on Mon Apr 20 15:11:23 2026 (68 seconds) with 32132.761 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '1').
+-- Configured 2 consensus jobs.
+-- All 2 consensus jobs finished successfully.
+-- Finished stage 'consensusCheck', reset canuIteration.
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 2 consensus jobs.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:11:23 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/tgStoreLoad \
+      -S ../assembly.seqStore \
+      -T  ./assembly.ctgStore 2 \
+      -L ./5-consensus/ctgcns.files \
+    > ./5-consensus/ctgcns.files.ctgStoreLoad.err 2>&1
+
+-- Finished on Mon Apr 20 15:11:23 2026 (like a bat out of hell) with 32132.761 GB free disk space
+----------------------------------------
+-- Purging consensus output after loading to ctgStore.
+-- Purged 2 .cns outputs.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:11:23 2026 with 32132.761 GB free disk space
+
+    cd unitigging
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/tgStoreDump \
+      -S ../assembly.seqStore \
+      -T ./assembly.ctgStore 2 \
+      -sizes -s 3200000 \
+    > ./assembly.ctgStore/seqDB.v002.sizes.txt
+
+-- Finished on Mon Apr 20 15:11:23 2026 (in the blink of an eye) with 32132.761 GB free disk space
+----------------------------------------
+-- Found, in version 2, after consensus generation:
+--   contigs:      9 sequences, total length 3140784 bp (including 1 repeats of total length 7042 bp).
+--   bubbles:      1 sequences, total length 15016 bp.
+--   unassembled:  27 sequences, total length 147705 bp.
+--
+-- Contig sizes based on genome size 3.2mbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10     2775136             1     2775136
+--     20     2775136             1     2775136
+--     30     2775136             1     2775136
+--     40     2775136             1     2775136
+--     50     2775136             1     2775136
+--     60     2775136             1     2775136
+--     70     2775136             1     2775136
+--     80     2775136             1     2775136
+--     90      218569             2     2993705
+--
+-- Finished stage 'consensusLoad', reset canuIteration.
+----------------------------------------
+-- Starting command on Mon Apr 20 15:11:24 2026 with 32132.761 GB free disk space
+
+    cd .
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/tgStoreDump \
+      -S ./assembly.seqStore \
+      -T ./unitigging/assembly.ctgStore 2 \
+      -o ./assembly.contigs \
+      -layout \
+    > ./assembly.contigs.layout.err 2>&1
+
+-- Finished on Mon Apr 20 15:11:24 2026 (one second) with 32132.761 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Mon Apr 20 15:11:24 2026 with 32132.761 GB free disk space
+
+    cd .
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/tgStoreDump \
+      -S ./assembly.seqStore \
+      -T ./unitigging/assembly.ctgStore 2 \
+      -consensus -fasta \
+      -unassembled \
+    > ./assembly.unassembled.fasta
+    2> ./assembly.unassembled.err
+
+-- Finished on Mon Apr 20 15:11:24 2026 (in the blink of an eye) with 32132.761 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Mon Apr 20 15:11:24 2026 with 32132.761 GB free disk space
+
+    cd .
+    /sw/arch/eb/software/canu/2.3-GCCcore-13.3.0-Java-17/bin/tgStoreDump \
+      -S ./assembly.seqStore \
+      -T ./unitigging/assembly.ctgStore 2 \
+      -consensus -fasta \
+      -contigs \
+    > ./assembly.contigs.fasta
+    2> ./assembly.contigs.err
+
+-- Finished on Mon Apr 20 15:11:24 2026 (like a bat out of hell) with 32132.761 GB free disk space
+----------------------------------------
+-- Finished stage 'generateOutputs', reset canuIteration.
+--
+-- Assembly 'assembly' finished in '/gorilla/home/asma7174/GA_project/02_assembly/canu/output'.
+--
+-- Summary saved in 'assembly.report'.
+--
+-- Sequences saved:
+--   Contigs       -> 'assembly.contigs.fasta'
+--   Unassembled   -> 'assembly.unassembled.fasta'
+--
+-- Read layouts saved:
+--   Contigs       -> 'assembly.contigs.layout'.
+--
+-- Bye.
