@@ -97,6 +97,9 @@ All slurm and R scripts, as well as directories of each analysis (incl. log file
 │   ├── prokka_output
 │   ├── eggnog
 │   └── logs
+├── 05_comparison
+│   ├── synteny_comparison.tab
+│   ├── logs
 ├── 06_RNA_seq
 │   ├── Alignment
 │   ├── Counts & Expression
