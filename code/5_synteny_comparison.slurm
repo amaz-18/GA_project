@@ -3,7 +3,7 @@
 #SBATCH -c 2
 #SBATCH -t 02:00:00
 #SBATCH -J synteny_blast
-#SBATCH -o /home/asma7174/GA_project/05_comparison/synteny_%j.out
+#SBATCH -o /home/asma7174/GA_project/05_comparison/synteny_%j.out 
 #SBATCH -e /home/asma7174/GA_project/05_comparison/synteny_%j.err
 
 module load BLAST+/2.17.0-gompi-2024a
