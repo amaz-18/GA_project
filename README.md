@@ -43,11 +43,10 @@ The following pipeline tools  were used at various steps through the workflow:
 - **BWA** – used twice:
   - short‑read mapping for assembly polishing  
   - RNA‑seq read mapping to the Canu assembly
-- **samtools** – BAM processing  
-- **BUSCO** – assembly completeness assessment  
+- **samtools** – BAM processing    
 - **QUAST** – assembly quality evaluation  
-- **Prokka** – genome annotation  
-- **EggNOG‑mapper** – functional annotation   
+- **Prokka** – genome annotation
+- **MUMmer** - synteny comparison     
 - **HTSeq** – read counting  
 - **DESeq2 (R)** – differential expression analysis  
 
