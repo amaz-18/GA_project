@@ -1,0 +1,42 @@
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/control/raw/ERR1797972_1.fastq.gz /home/asma7174/GA_project/data/rna/control/raw/ERR1797972_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797972_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797972_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797972_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797972_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 27078884 Both Surviving: 13470821 (49.75%) Forward Only Surviving: 11820324 (43.65%) Reverse Only Surviving: 144758 (0.53%) Dropped: 1642981 (6.07%)
+TrimmomaticPE: Completed successfully
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/control/raw/ERR1797973_1.fastq.gz /home/asma7174/GA_project/data/rna/control/raw/ERR1797973_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797973_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797973_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797973_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797973_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 23953340 Both Surviving: 13417178 (56.01%) Forward Only Surviving: 9233693 (38.55%) Reverse Only Surviving: 142792 (0.60%) Dropped: 1159677 (4.84%)
+TrimmomaticPE: Completed successfully
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/control/raw/ERR1797974_1.fastq.gz /home/asma7174/GA_project/data/rna/control/raw/ERR1797974_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797974_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797974_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_paired_ERR1797974_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/control/trim_unpaired_ERR1797974_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 23240177 Both Surviving: 12144681 (52.26%) Forward Only Surviving: 9647636 (41.51%) Reverse Only Surviving: 124682 (0.54%) Dropped: 1323178 (5.69%)
+TrimmomaticPE: Completed successfully
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/serum/raw/ERR1797969_1.fastq.gz /home/asma7174/GA_project/data/rna/serum/raw/ERR1797969_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797969_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797969_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797969_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797969_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 25937368 Both Surviving: 12827233 (49.45%) Forward Only Surviving: 11614851 (44.78%) Reverse Only Surviving: 145766 (0.56%) Dropped: 1349518 (5.20%)
+TrimmomaticPE: Completed successfully
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/serum/raw/ERR1797970_1.fastq.gz /home/asma7174/GA_project/data/rna/serum/raw/ERR1797970_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797970_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797970_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797970_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797970_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 26634380 Both Surviving: 14416787 (54.13%) Forward Only Surviving: 10576996 (39.71%) Reverse Only Surviving: 159365 (0.60%) Dropped: 1481232 (5.56%)
+TrimmomaticPE: Completed successfully
+TrimmomaticPE: Started with arguments:
+ -threads 4 /home/asma7174/GA_project/data/rna/serum/raw/ERR1797971_1.fastq.gz /home/asma7174/GA_project/data/rna/serum/raw/ERR1797971_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797971_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797971_1.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_paired_ERR1797971_2.fastq.gz /proj/uppmax2026-1-61/nobackup/asma7174/Trimming/serum/trim_unpaired_ERR1797971_2.fastq.gz ILLUMINACLIP:/home/asma7174/GA_project/06_RNA_seq/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Quality encoding detected as phred33
+Input Read Pairs: 27609615 Both Surviving: 13770731 (49.88%) Forward Only Surviving: 11852239 (42.93%) Reverse Only Surviving: 150050 (0.54%) Dropped: 1836595 (6.65%)
+TrimmomaticPE: Completed successfully
